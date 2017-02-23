@@ -9,10 +9,10 @@ use Plenty\Modules\Basket\Events\Basket\AfterBasketCreate;
 use Plenty\Modules\Basket\Events\Basket\AfterBasketChanged;
 
 /**
- * Class PrePaymentServiceProvider
- * @package PrePayment\Providers
+ * Class PayUponPickupServiceProvider
+ * @package PayUponPickup\Providers
  */
-class PrePaymentServiceProvider extends ServiceProvider
+class PayUponPickupServiceProvider extends ServiceProvider
 {
 
       /**
@@ -28,7 +28,7 @@ class PrePaymentServiceProvider extends ServiceProvider
        */
       public function boot(PaymentMethodContainer $payContainer)
       {
-            //Register the Pre Payment Plugin
+            //Register the PayUponPickup Plugin
             $payContainer->register('plenty_payuponpickup::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
                                     [AfterBasketChanged::class, AfterBasketCreate::class]   );
       }

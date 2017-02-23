@@ -9,7 +9,7 @@ use Plenty\Modules\Payment\Method\Contracts\PaymentMethodRepositoryContract;
  * Migration to create payment method
  *
  * Class CreatePaymentMethod
- * @package PrePayment\Migrations
+ * @package PayUponPickup\Migrations
  */
 class CreatePaymentMethod
 {
