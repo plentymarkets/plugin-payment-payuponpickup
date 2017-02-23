@@ -1,10 +1,31 @@
 {
-  "name": "PayUponPickup",
-  "description": "Pay upon pickup payment method",
-  "author": "Your name",
-  "keywords": ["plentymarkets", "payment method", "plugin"],
-  "type": "payment",
-  "namespace": "PayUponPickup",
-  "serviceProvider": "PayUponPickup\\Providers\\PayUponPickupServiceProvider",
-  "require": []
+    "version"           : "1.0.0",
+    "name"              : "PayUponPickup",
+    "license"           : "AGPL-3.0",
+    "pluginIcon"        : "icon_plugin_xs.png",
+    "price"             : 0.00,
+    "description"       : "Pay upon pickup plugin for plentymarkets online stores",
+    "shortDescription"  : {"de": "Zahlungsart Bar bei Abholung für plentymarkets Webshops","en": "Payment method Pay upon pickup for plentymarkets online stores"},
+    "categories"        : ["3519"],
+    "author"            : "plentymarkets GmbH",
+    "authorIcon"        : "icon_author_xs.png",
+    "email"             : "sales@plentymarkets.com",
+    "phone"             : "+49 561 98 681 100",
+    "keywords"          : ["pay upon pickup", "Barzahlung", "official", "plentymarkets", "payment"],
+    "type"              : "payment",
+    "namespace"         : "PayUponPickup",
+    "serviceProvider"   : "PayUponPickup\\Providers\\PayUponPickupServiceProvider",
+    "javaScriptFiles"   : [],
+    "containers"        : [],
+    "dataProviders"     :
+    [
+        {
+            "key"           :"PayUponPickup\\Containers\\IconContainer",
+            "name"          :"Pay upon pickup icon",
+            "description"   :"Display the icon for this payment method"
+        }
+    ],
+    "dependencies"      : [],
+    "runOnBuild"        : ["PayUponPickup\\Migrations\\CreatePaymentMethod"]
 }
+

@@ -1,70 +1,35 @@
-<?php //strict
+<?php
 
-    namespace PayUponPickup\Providers;
+namespace PayUponPickup\Providers;
 
-    use Plenty\Modules\Payment\Events\Checkout\ExecutePayment;
-    use Plenty\Modules\Payment\Events\Checkout\GetPaymentMethodContent;
-    use Plenty\Plugin\ServiceProvider;
-    use PayUponPickup\Helper\PayUponPickupHelper;
-    use Plenty\Modules\Payment\Method\Contracts\PaymentMethodContainer;
-    use Plenty\Plugin\Events\Dispatcher;
+use Plenty\Plugin\ServiceProvider;
+use Plenty\Modules\Payment\Method\Contracts\PaymentMethodContainer;
+use PayUponPickup\Methods\PayUponPickupPaymentMethod;
+use Plenty\Modules\Basket\Events\Basket\AfterBasketCreate;
+use Plenty\Modules\Basket\Events\Basket\AfterBasketChanged;
 
-    use PayUponPickup\Methods\PayUponPickupPaymentMethod;
+/**
+ * Class PrePaymentServiceProvider
+ * @package PrePayment\Providers
+ */
+class PrePaymentServiceProvider extends ServiceProvider
+{
 
-    use Plenty\Modules\Basket\Events\Basket\AfterBasketChanged;
-    use Plenty\Modules\Basket\Events\BasketItem\AfterBasketItemAdd;
-    use Plenty\Modules\Basket\Events\Basket\AfterBasketCreate;
+      /**
+       * Register the route service provider
+       */
+      public function register()
+      {
 
-    /**
-     * Class PayUponPickupServiceProvider
-     * @package PayUponPickup\Providers
-     */
-    class PayUponPickupServiceProvider extends ServiceProvider
-    {
-        public function register()
-        {
+      }
 
-        }
-
-        /**
-         * Boot additional services for the payment method
-         *
-         * @param PayUponPickupHelper $paymentHelper
-         * @param PaymentMethodContainer $payContainer
-         * @param Dispatcher $eventDispatcher
-         */
-        public function boot( PayUponPickupHelper $paymentHelper,
-                              PaymentMethodContainer $payContainer,
-                              Dispatcher $eventDispatcher)
-        {
-            // Create the ID of the payment method if it doesn't exist yet
-            $paymentHelper->createMopIfNotExists();
-
-            // Register the Pay upon pickup payment method in the payment method container
+      /**
+       * @param PaymentMethodContainer    $payContainer
+       */
+      public function boot(PaymentMethodContainer $payContainer)
+      {
+            //Register the Pre Payment Plugin
             $payContainer->register('plenty_payuponpickup::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
-                                  [ AfterBasketChanged::class, AfterBasketItemAdd::class, AfterBasketCreate::class ]
-            );
-
-            // Listen for the event that gets the payment method content
-            $eventDispatcher->listen(GetPaymentMethodContent::class,
-                    function(GetPaymentMethodContent $event) use( $paymentHelper)
-                    {
-                        if($event->getMop() == $paymentHelper->getPaymentMethod())
-                        {
-                           $event->setValue('');
-                           $event->setType('continue');
-                        }
-                    });
-
-            // Listen for the event that executes the payment
-            $eventDispatcher->listen(ExecutePayment::class,
-               function(ExecutePayment $event) use( $paymentHelper)
-               {
-                   if($event->getMop() == $paymentHelper->getPaymentMethod())
-                   {
-                       $event->setValue('<h1>Pay upon pickup<h1>');
-                       $event->setType('htmlContent');
-                   }
-               });
-       }
-    }
+                                    [AfterBasketChanged::class, AfterBasketCreate::class]   );
+      }
+}

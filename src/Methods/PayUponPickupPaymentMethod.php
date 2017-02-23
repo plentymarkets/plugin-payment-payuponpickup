@@ -1,99 +1,125 @@
-<?php //strict
+<?php
 
-    namespace PayUponPickup\Methods;
+namespace PayUponPickup\Methods;
 
-    use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
-    use Plenty\Plugin\ConfigRepository;
-    use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
-    use Plenty\Modules\Basket\Models\Basket;
+use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
+use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
+use Plenty\Plugin\ConfigRepository;
 
-    /**
-     * Class PayUponPickupPaymentMethod
-     * @package PayUponPickup\Methods
-     */
-    class PayUponPickupPaymentMethod extends PaymentMethodService
-    {
-        /**
-         * Check the configuration if the payment method is active
-         * Return true if the payment method is active, else return false
-         *
-         * @param ConfigRepository $configRepository
-         * @param BasketRepositoryContract $basketRepositoryContract
-         * @return bool
-         */
-        public function isActive( ConfigRepository $configRepository,
-                                  BasketRepositoryContract $basketRepositoryContract):bool
-        {
-            /** @var bool $active */
-            $active = true;
+/**
+ * Class PayUponPickupPaymentMethod
+ * @package PayUponPickup\Methods
+ */
+class PayUponPickupPaymentMethod extends PaymentMethodService
+{
 
-            /** @var Basket $basket */
-            $basket = $basketRepositoryContract->load();
+      /**
+       * @var BasketRepositoryContract
+       */
+      private $basketRepo;
 
-            /**
-             * Check the shipping profile ID. The ID can be entered in the config.json.
-             */
-            if( $configRepository->get('PayUponPickup.shippingProfileId') != $basket->shippingProfileId)
-            {
-                $active = false;
-            }
 
-            return $active;
-        }
+      /**
+       * @var ConfigRepository
+       */
+      private $configRepo;
 
-        /**
-         * Get the name of the payment method. The name can be entered in the config.json.
-         *
-         * @param ConfigRepository $configRepository
-         * @return string
-         */
-        public function getName( ConfigRepository $configRepository ):string
-        {
-            $name = $configRepository->get('PayUponPickup.name');
+      /**
+       * PayUponPickupPaymentMethod constructor.
+       * @param BasketRepositoryContract $basketRepo
+       * @param ConfigRepository $configRepo
+       */
+      public function __construct(BasketRepositoryContract    $basketRepo,
+                                  ConfigRepository            $configRepo)
+      {
+            $this->basketRepo     = $basketRepo;
+            $this->configRepo     = $configRepo;
+      }
 
-            if(!strlen($name))
-            {
-                $name = 'Pay upon pickup';
-            }
+      /**
+       * Check whether PayUponPickup is active or not
+       *
+       * @return bool
+       */
+      public function isActive()
+      {
+            return true;
+      }
+
+      /**
+       * Get shown name
+       *
+       * @return string
+       */
+      public function getName()
+      {
+            $name = $this->configRepo->get('PayUponPickup.name');
 
             return $name;
+      }
 
-        }
 
-        /**
-         * Get the path of the icon. The URL can be entered in the config.json.
-         *
-         * @param ConfigRepository $configRepository
-         * @return string
-         */
-        public function getIcon( ConfigRepository $configRepository ):string
-        {
-            if($configRepository->get('PayUponPickup.logo') == 1)
-            {
-                return $configRepository->get('PayUponPickup.logo.url');
-            }
-            return '';
-        }
+      /**
+       * Get PayUponPickup Fee
+       *
+       * @return float
+       */
+      public function getFee()
+      {
+            $basket = $this->basketRepo->load();
 
-        /**
-         * Get the description of the payment method. The description can be entered in the config.json.
-         *
-         * @param ConfigRepository $configRepository
-         * @return string
-         */
-        public function getDescription( ConfigRepository $configRepository ):string
-        {
-            if($configRepository->get('PayUponPickup.infoPage.type') == 1)
+            // Shipping Country ID with ID = 1 belongs to Germany
+            if($basket->shippingCountryId == 1)
             {
-                return $configRepository->get('PayUponPickup.infoPage.intern');
-            }
-            elseif ($configRepository->get('PayUponPickup.infoPage.type') == 2)
-            {
-                return $configRepository->get('PayUponPickup.infoPage.extern');
+                  return (float)$this->configRepo->get('PayUponPickup.fee.domestic');
             }
             else
             {
-              return '';
+                  return (float)$this->configRepo->get('PayUponPickup.fee.foreign');
             }
-        }
-    }
+
+      }
+
+
+      /**
+       * Get PayUponPickup Icon
+       *
+       * @return string
+       */
+      public function getIcon( ConfigRepository $config )
+      {
+            if($config->get('PayUponPickup.logo') == 1)
+            {
+                  return $this->configRepo->get('PayUponPickup.logo.url');
+            }
+
+            return '';
+      }
+
+
+      /**
+       * Get PayUponPickup Description
+       *
+       * @param ConfigRepository $config
+       * @return string
+       */
+      public function getDescription( ConfigRepository $config )
+      {
+            switch($this->configRepo->get('PayUponPickup.infoPage.type'))
+            {
+                  case 1:
+                        return $this->configRepo->get('PayUponPickup.infoPage.extern');
+                        break;
+
+                  case 2:
+                        return $this->configRepo->get('PayUponPickup.infoPage.intern');
+                        break;
+
+                  default:
+                        return '';
+                        break;
+            }
+      }
+
+
+}

@@ -11,7 +11,8 @@
     "key": "infoPage.type",
     "label": "Information page",
     "type": "dropdown",
-    "possibleValues": {
+    "possibleValues":
+    {
       "0": "None",
       "1": "External content",
       "2": "Internal content"
@@ -33,10 +34,28 @@
   },
   {
     "tab": "Settings",
+    "key": "shippingCountry",
+    "label": "Lieferländer",
+    "type": "multi_select",
+    "possibleValues": {
+      "shippingCountry.de": "Deutschland",
+      "shippingCountry.at": "Östereich",
+      "shippingCountry.ch": "Schweiz",
+      "shippingCountry.es": "Spanien",
+      "shippingCountry.uk": "Großbritanien",
+      "shippingCountry.fr": "Frankreich",
+      "shippingCountry.gr": "Griechenland",
+      "shippingCountry.it": "Italien"
+    },
+    "default": ""
+  },
+  {
+    "tab": "Settings",
     "key": "logo",
     "label": "Logo",
     "type": "dropdown",
-    "possibleValues": {
+    "possibleValues":
+    {
       "0": "None",
       "1": "Logo URL"
     },
@@ -51,9 +70,16 @@
   },
   {
     "tab": "Settings",
-    "key": "shippingProfileId",
-    "label": "Shipping profile ID",
+    "key": "fee.domestic",
+    "label": "Aufpreis Inland",
     "type": "text",
-    "default": ""
+    "default": "0,00"
+  },
+  {
+    "tab": "Settings",
+    "key": "fee.foreign",
+    "label": "Aufpreis Ausland",
+    "type": "text",
+    "default": "0,00"
   }
 ]
