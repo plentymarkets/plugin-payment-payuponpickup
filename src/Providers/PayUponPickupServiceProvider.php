@@ -15,21 +15,21 @@ use Plenty\Modules\Basket\Events\Basket\AfterBasketChanged;
 class PayUponPickupServiceProvider extends ServiceProvider
 {
 
-      /**
-       * Register the route service provider
-       */
-      public function register()
-      {
+    /**
+    * Register the route service provider
+    */
+    public function register()
+    {
+        $this->getApplication()->register(PrePaymentRouteServiceProvider::class);
+    }
 
-      }
-
-      /**
-       * @param PaymentMethodContainer    $payContainer
-       */
-      public function boot(PaymentMethodContainer $payContainer)
-      {
-            //Register the PayUponPickup Plugin
-            $payContainer->register('plenty_payuponpickup::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
-                                    [AfterBasketChanged::class, AfterBasketCreate::class]   );
-      }
+    /**
+    * @param PaymentMethodContainer    $payContainer
+    */
+    public function boot(PaymentMethodContainer $payContainer)
+    {
+        //Register the PayUponPickup Plugin
+        $payContainer->register('plenty_payuponpickup::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
+                                [AfterBasketChanged::class, AfterBasketCreate::class]   );
+    }
 }

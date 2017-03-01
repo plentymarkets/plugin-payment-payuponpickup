@@ -26,6 +26,6 @@
         }
     ],
     "dependencies"      : [],
-    "runOnBuild"        : ["PayUponPickup\\Migrations\\CreatePaymentMethod"]
+    "runOnBuild"        : ["PayUponPickup\\Migrations\\CreatePaymentMethod", "PayUponPickup\\Migrations\\CreateSettings_1_0_0"]
 }
 
