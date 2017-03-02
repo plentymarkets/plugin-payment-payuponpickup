@@ -1,0 +1,12 @@
+{
+  "defaultEntryPoint": "index.html",
+  "namespace": "PayUponPickup",
+  "menuEntries": [
+    {
+      "label": "Einstellungen",
+      "menu": "settings/orders/payuponpickup",
+      "urlKey": "settings",
+      "entryPoint": "index.html"
+    }
+  ]
+}
