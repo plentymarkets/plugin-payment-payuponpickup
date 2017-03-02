@@ -3,9 +3,9 @@
   "namespace": "PayUponPickup",
   "menuEntries": [
     {
-      "label": "Einstellungen",
-      "menu": "settings/orders/payuponpickup",
-      "urlKey": "settings",
+      "label": "Barzahlung",
+      "menu": "settings/orders",
+      "urlKey": "payuponpickup",
       "entryPoint": "index.html"
     }
   ]
