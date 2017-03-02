@@ -8,8 +8,6 @@ Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie Einstellungen
 
 ##### Zahlungsart einrichten:
 
-##### PayPal PLUS aktivieren:
-
 1. Öffnen Sie das Menü **Einstellungen&nbsp;» Aufträge&nbsp;» Bar bei Abholung**.
 2. Wählen Sie einen Mandanten.
 3. Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in Tabelle 1.
