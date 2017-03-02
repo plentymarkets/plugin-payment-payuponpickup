@@ -40,7 +40,7 @@ Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie Einstellungen
 				<b>Anzeigename</b>
 			</td>
 			<td>
-				Die Bezeichnung, die in der Übersicht der Zahlungsarten in der Kaufabwicklung für die Zahlung mit PayPal angezeigt wird.
+				Die Bezeichnung, die in der Übersicht der Zahlungsarten in der Kaufabwicklung für die Barzahlung angezeigt wird.
 			</td>
 		</tr>
 		<tr>
@@ -48,7 +48,7 @@ Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie Einstellungen
 				<b>Logo</b>
 			</td>
 			<td>
-			Eine https-URL, die zum Logo-Bild führt. Gültige Dateiformate sind .gif, .jpg oder .png. Die Maximalgröße beträgt 190 Pixel in der Breite und 60 Pixel in der Höhe. PayPal schneidet größere Bilder ab. PayPal platziert das Logo ganz oben in der Warenkorbübersicht.
+			Eine https-URL, die zum Logo-Bild führt. Gültige Dateiformate sind .gif, .jpg oder .png. Die Maximalgröße beträgt 190 Pixel in der Breite und 60 Pixel in der Höhe.
 			</td>
 		</tr>
 		<tr>
@@ -59,7 +59,7 @@ Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie Einstellungen
 				<b>Lieferländer</b>
 			</td>
 			<td>
-				Nur für die hier eingestellten Lieferländer ist die Zahlungsart PayPal freigegeben.
+				Nur für die hier eingestellten Lieferländer ist diese Zahlungsart freigegeben.
 			</td>
 		</tr>
 		<tr>
@@ -67,7 +67,7 @@ Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie Einstellungen
 				<b>Aufpreis Webshop</b>
 			</td>
 			<td>
-Wenn bei der Zahlung mit PayPal zusätzliche Kosten berechnet werden, den Prozentwert oder Pauschalwert gemäß der Vertragskonditionen eingeben.<br />
+Wenn bei der Zahlung mit dieser Zahlungsart zusätzliche Kosten berechnet werden, den Prozentwert oder Pauschalwert gemäß der Vertragskonditionen eingeben.<br />
      
 <strong>Inland (Pauschal):</strong> Pauschalen Wert eingeben, der bei Aufträgen berücksichtigt wird, bei denen das Systemland gewählt wurde. Diese Kosten werden im Bestellvorgang bei der Wahl der Zahlungsart zum Auftrag addiert. Der Betrag fließt in die Gesamtsumme des Auftrags ein und wird nicht einzeln ausgewiesen.<br />
 
