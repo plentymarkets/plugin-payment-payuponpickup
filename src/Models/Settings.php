@@ -50,6 +50,8 @@ class Settings extends Model
 
     const DEFAULT_LANGUAGE = "de";
 
+    const MODEL_NAMESPACE = 'PayUponPickup\Models\Settings';
+
 
     public $id;
     public $plentyId;

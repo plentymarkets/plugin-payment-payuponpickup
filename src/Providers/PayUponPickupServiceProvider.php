@@ -20,7 +20,7 @@ class PayUponPickupServiceProvider extends ServiceProvider
     */
     public function register()
     {
-        $this->getApplication()->register(PrePaymentRouteServiceProvider::class);
+        $this->getApplication()->register(PayUponPickupRouteServiceProvider::class);
     }
 
     /**
