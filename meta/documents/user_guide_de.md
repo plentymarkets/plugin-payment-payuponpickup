@@ -29,12 +29,6 @@ Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie Einstellungen
 		</tr>
 		<tr>
 			<td>
-				<b>Priorität</b>
-			</td>
-			<td>Bestimmt, an welcher Stelle PayPal in der Kaufabwicklung steht, wenn PayPal PLUS nicht verwendet wird.</td>
-		</tr>
-		<tr>
-			<td>
 				<b>Infoseite</b>
 			</td>
 			<td>
