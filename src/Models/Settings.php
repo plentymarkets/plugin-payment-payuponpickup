@@ -34,7 +34,7 @@ class Settings extends Model
                                              "feeDomestic"         => "float"   ,
                                              "feeForeign"          => "float"   );
 
-    const SETTINGS_DEFAULT_VALUES = array(   "name"                => "Vorkasse"         ,
+    const SETTINGS_DEFAULT_VALUES = array(   "name"                => "Barzahlung"       ,
                                              "infoPageType"        => "0"                ,
                                              "infoPageIntern"      => ""                 ,
                                              "infoPageExtern"      => ""                 ,
