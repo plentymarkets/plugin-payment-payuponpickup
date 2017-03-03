@@ -17,15 +17,11 @@
     "serviceProvider"   : "PayUponPickup\\Providers\\PayUponPickupServiceProvider",
     "javaScriptFiles"   : [],
     "containers"        : [],
-    "dataProviders"     :
-    [
-        {
-            "key"           :"PayUponPickup\\Containers\\IconContainer",
-            "name"          :"Pay upon pickup icon",
-            "description"   :"Display the icon for this payment method"
-        }
-    ],
+    "dataProviders"     : [],
     "dependencies"      : [],
-    "runOnBuild"        : ["PayUponPickup\\Migrations\\CreatePaymentMethod", "PayUponPickup\\Migrations\\CreateSettings_1_0_0"]
+    "runOnBuild"        : [
+        "PayUponPickup\\Migrations\\CreatePaymentMethod",
+        "PayUponPickup\\Migrations\\CreateSettings_1_0_0"
+    ]
 }
 

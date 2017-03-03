@@ -109,7 +109,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
               return $this->settings->getSetting('logoUrl');
         }
 
-        return '';
+        return 'layout/plugins/production/payuponpickup/images/icon.png';
     }
 
 
