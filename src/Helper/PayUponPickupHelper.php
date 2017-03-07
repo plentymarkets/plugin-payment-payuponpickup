@@ -28,9 +28,9 @@ class PayUponPickupHelper
         // Check whether the ID of the Invoice payment method has been created
         if($this->getPayUponPickupMopId() == 'no_paymentmethod_found')
         {
-            $paymentMethodData = array( 'pluginKey' => 'plenty_payuponpickup',
-                                        'paymentKey' => 'PAYUPONPICKUP',
-                                        'name' => 'Bar Zahlung bei Abholung');
+            $paymentMethodData = array( 'pluginKey'     => 'plenty_payuponpickup',
+                                        'paymentKey'    => 'PAYUPONPICKUP',
+                                        'name'          => 'Bar Zahlung bei Abholung');
 
             $this->paymentMethodRepository->createPaymentMethod($paymentMethodData);
         }
