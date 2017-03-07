@@ -2,6 +2,7 @@
 
 namespace PayUponPickup\Providers;
 
+use PayUponPickup\Helper\PayUponPickupHelper;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodContainer;
 use PayUponPickup\Methods\PayUponPickupPaymentMethod;
@@ -16,18 +17,23 @@ class PayUponPickupServiceProvider extends ServiceProvider
 {
 
     /**
-    * Register the route service provider
-    */
+     * Register the route service provider
+     */
     public function register()
     {
         $this->getApplication()->register(PayUponPickupRouteServiceProvider::class);
     }
 
     /**
-    * @param PaymentMethodContainer    $payContainer
-    */
-    public function boot(PaymentMethodContainer $payContainer)
+     * @param PaymentMethodContainer    $payContainer
+     */
+    public function boot(   PayUponPickupHelper $paymentHelper,
+                            PaymentMethodContainer $payContainer)
     {
+
+        // Create the ID of the payment method if it doesn't exist yet
+        $paymentHelper->createMopIfNotExists();
+
         //Register the PayUponPickup Plugin
         $payContainer->register('plenty_payuponpickup::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
                                 [AfterBasketChanged::class, AfterBasketCreate::class]   );

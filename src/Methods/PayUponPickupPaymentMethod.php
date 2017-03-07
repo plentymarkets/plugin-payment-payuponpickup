@@ -29,14 +29,12 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     /**
     * PayUponPickupPaymentMethod constructor.
     * @param BasketRepositoryContract $basketRepo
-    * @param ConfigRepository $configRepo
+    * @param SettingsService          $settingsService
     */
     public function __construct(BasketRepositoryContract    $basketRepo,
-                                ConfigRepository            $configRepo,
                                 SettingsService             $settingsService)
     {
         $this->basketRepo     = $basketRepo;
-        $this->configRepo     = $configRepo;
         $this->settings     = $settingsService;
     }
 
@@ -109,7 +107,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
               return $this->settings->getSetting('logoUrl');
         }
 
-        return '';
+        return 'layout/plugins/production/payuponpickup/images/icon.png';
     }
 
 
@@ -124,11 +122,11 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
         switch($this->settings->getSetting('infoPageType'))
         {
               case 1:
-                    return $this->configRepo->get('infoPageExtern');
+                    return $this->settings->getSetting('infoPageExtern');
                     break;
 
               case 2:
-                    return $this->configRepo->get('infoPageIntern');
+                    return $this->settings->getSetting('infoPageIntern');
                     break;
 
               default:

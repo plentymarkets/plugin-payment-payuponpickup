@@ -23,6 +23,7 @@ class PayUponPickupRouteServiceProvider extends RouteServiceProvider
        $apiRouter->version(['v1'], ['middleware' => ['oauth']],
             function ($routerApi)
             {
+                /** @var ApiRouter $routerApi */
                 $routerApi->get('payment/payuponpickup/settings/{plentyId}/{lang}'  , ['uses' => 'PayUponPickup\Controllers\SettingsController@loadSettings']);
                 $routerApi->put('payment/payuponpickup/settings'                    , ['uses' => 'PayUponPickup\Controllers\SettingsController@saveSettings']);
             });

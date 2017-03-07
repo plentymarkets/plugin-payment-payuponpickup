@@ -50,7 +50,7 @@ class SettingsService
 
         if(empty($loadedSettings))
         {
-            $this->loadedSettings = $this->convertSettingsToCorrectFormat( $this->getSettingsForPlentyId($plentyId, $lang), Settings::AVAILABLE_SETTINGS);
+            $this->loadedSettings = $this->getSettingsForPlentyId($plentyId, $lang);
         }
 
         if(array_key_exists($name, $this->loadedSettings))
@@ -58,7 +58,7 @@ class SettingsService
             return $this->loadedSettings[$name];
         }
 
-        throw new ValidationException('No such setting found!');
+        throw new ValidationException('No such setting found: ' . $name);
     }
 
     /**
