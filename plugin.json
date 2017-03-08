@@ -17,7 +17,12 @@
     "serviceProvider"   : "PayUponPickup\\Providers\\PayUponPickupServiceProvider",
     "javaScriptFiles"   : [],
     "containers"        : [],
-    "dataProviders"     : [],
+    "dataProviders"     : [
+        {
+        "key"           :"PayUponPickup\\Providers\\Icon\\IconProvider",
+        "name"          :"PayUponPickup icon",
+        "description"   :"Display the icon for this payment method"
+    }],
     "dependencies"      : [],
     "runOnBuild"        : [
         "PayUponPickup\\Migrations\\CreatePaymentMethod",
