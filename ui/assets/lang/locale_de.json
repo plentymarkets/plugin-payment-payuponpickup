@@ -26,5 +26,6 @@
   "categories": "Kategorien",
   "select": "Wählen",
   "cancel": "Abbrechen",
-  "itemCategory": "Artikelkategorie:"
+  "itemCategory": "Artikelkategorie:",
+  "defaultLogo": "Standard-Logo"
 }
