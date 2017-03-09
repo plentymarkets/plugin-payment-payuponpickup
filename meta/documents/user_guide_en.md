@@ -58,14 +58,14 @@ In order to make this payment method available in your online store, you have to
 		</tr>
         <tr>
 			<td>
-				<b>Surcharge (domestic)</b>:
+				<b>Surcharge (domestic)</b>
 			</td>
 			<td>
 Enter a flat rate. The value that is entered will be taken into consideration for those orders that correspond to the system country. Once the customer has selected the payment method, these costs will be added to the particular order in the order process. The amount will be added to the total in the order and will not be displayed individually.
 		</tr>
 		<tr>
 			<td>
-				<b>Surcharge (foreign countries)</b>:
+				<b>Surcharge (foreign countries)</b>
 			</td>
 			<td>
 Enter a flat rate. The value that is entered will be taken into consideration for those orders that correspond to a foreign country. Once the customer has selected the payment method, these costs will be added to the particular order in the order process. The amount will be added to the total in the order and will not be displayed individually.
