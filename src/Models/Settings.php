@@ -41,7 +41,7 @@ class Settings extends Model
                                              "de"  => array( "name"                => "Barzahlung"       ,
                                                              "infoPageIntern"      => ""                 ,
                                                              "infoPageExtern"      => ""                 ,
-                                                             "logo"                => "0"                ,
+                                                             "logo"                => "2"                ,
                                                              "logoUrl"             => ""                 ),
                                              "en"  => array( "name"                => "Pay upon pickup"  ,
                                                              "infoPageIntern"      => ""                 ,
