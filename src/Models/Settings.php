@@ -34,15 +34,36 @@ class Settings extends Model
                                              "feeDomestic"         => "float"   ,
                                              "feeForeign"          => "float"   );
 
-    const SETTINGS_DEFAULT_VALUES = array(   "name"                => "Barzahlung"       ,
-                                             "infoPageType"        => "0"                ,
-                                             "infoPageIntern"      => ""                 ,
-                                             "infoPageExtern"      => ""                 ,
+    const SETTINGS_DEFAULT_VALUES = array(   "infoPageType"        => "0"                ,
                                              "shippingCountries"   => ""                 ,
-                                             "logo"                => "0"                ,
-                                             "logoUrl"             => ""                 ,
                                              "feeDomestic"         => "0.00"             ,
-                                             "feeForeign"          => "0.00"             );
+                                             "feeForeign"          => "0.00"             ,
+                                             "de"  => array( "name"                => "Barzahlung"       ,
+                                                             "infoPageIntern"      => ""                 ,
+                                                             "infoPageExtern"      => ""                 ,
+                                                             "logo"                => "2"                ,
+                                                             "logoUrl"             => ""                 ),
+                                             "en"  => array( "name"                => "Pay upon pickup"  ,
+                                                             "infoPageIntern"      => ""                 ,
+                                                             "infoPageExtern"      => ""                 ,
+                                                             "logo"                => "0"                ,
+                                                             "logoUrl"             => ""                 ),
+                                             "fr"  => array( "name"                => "Paiement en espèces",
+                                                             "infoPageIntern"      => ""                 ,
+                                                             "infoPageExtern"      => ""                 ,
+                                                             "logo"                => "0"                ,
+                                                             "logoUrl"             => ""                 ),
+                                             "es"  => array( "name"                => "Pago en metálico" ,
+                                                             "infoPageIntern"      => ""                 ,
+                                                             "infoPageExtern"      => ""                 ,
+                                                             "logo"                => "0"                ,
+                                                             "logoUrl"             => ""                 ) );
+
+    const LANG_INDEPENDENT_SETTINGS = array( "infoPageType"      ,
+                                             "shippingCountries" ,
+                                             "feeDomestic"       ,
+                                             "feeForeign"        );
+
     const AVAILABLE_LANGUAGES = array( "de",
                                        "en",
                                        "fr",

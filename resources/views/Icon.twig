@@ -1,0 +1,3 @@
+{% set lang  = payuponpickup.sessionStorage.getLang() %}
+{% set name  = payuponpickup.settings.getSetting('name', lang) %}
+<img src="{{ plugin_path("PayUponPickup") }}/images/icon.png" title="{{ name }}">
