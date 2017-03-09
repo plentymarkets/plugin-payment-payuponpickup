@@ -4,6 +4,7 @@ namespace PayUponPickup\Methods;
 
 use IO\Services\SessionStorageService;
 use PayUponPickup\Services\SettingsService;
+use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
@@ -26,16 +27,21 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     /** @var  SettingsService */
     private $settings;
 
+    /** @var  Checkout */
+    private $checkout;
+
+
     /**
     * PayUponPickupPaymentMethod constructor.
     * @param BasketRepositoryContract $basketRepo
     * @param SettingsService          $settingsService
     */
     public function __construct(BasketRepositoryContract    $basketRepo,
-                                SettingsService             $settingsService)
+                                SettingsService             $settingsService, Checkout $checkout)
     {
         $this->basketRepo     = $basketRepo;
         $this->settings     = $settingsService;
+        $this->checkout       = $checkout;
     }
 
     /**
@@ -45,6 +51,11 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     */
     public function isActive()
     {
+        if(!in_array($this->checkout->getShippingCountryId(), $this->settings->getSetting('shippingCountries')))
+        {
+            return false;
+        }
+
         return true;
     }
 
