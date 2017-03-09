@@ -27,8 +27,6 @@ class PayUponPickupRouteServiceProvider extends RouteServiceProvider
                 $routerApi->get('payment/payuponpickup/settings/{plentyId}/{lang}'  , ['uses' => 'PayUponPickup\Controllers\SettingsController@loadSettings']);
                 $routerApi->put('payment/payuponpickup/settings'                    , ['uses' => 'PayUponPickup\Controllers\SettingsController@saveSettings']);
             });
-        // $router->get('payment/payuponpickup/settings/{plentyId}/{lang}',   'PrePayment\Controllers\SettingsController@loadSettings');
-        // $router->put('payment/payuponpickup/settings',                     'PrePayment\Controllers\SettingsController@saveSettings');
     }
 
 }
