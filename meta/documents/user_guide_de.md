@@ -92,3 +92,7 @@ Das Template-Plugin **Ceres** bietet Ihnen auf der Startseite einen Template-Con
 3. Wählen Sie den Bereich **Pay upon pickup**.
 4. Aktivieren Sie den Container **Homepage: Payment method container**.
 5. **Speichern** Sie die Einstellungen.<br />→ Das Logo der Zahlungsart wird auf der Startseite des Webshops angezeigt.
+
+## Lizenz
+ 
+Das gesamte Projekt unterliegt der GNU AFFERO GENERAL PUBLIC LICENSE – weitere Informationen finden Sie in der [LICENSE.md](https://github.com/plentymarkets/plugin-payment-payuponpickup/blob/master/LICENSE.md).
