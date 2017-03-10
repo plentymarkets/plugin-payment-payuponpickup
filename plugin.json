@@ -5,7 +5,7 @@
     "pluginIcon"        : "icon_plugin_xs.png",
     "price"             : 0.00,
     "description"       : "Pay upon pickup plugin for plentymarkets online stores",
-    "shortDescription"  : {"de": "Zahlungsart Bar bei Abholung für plentymarkets Webshops","en": "Payment method Pay upon pickup for plentymarkets online stores"},
+    "shortDescription"  : {"de": "Zahlungsart Barzahlung für plentymarkets Webshops","en": "Payment method Pay upon pickup for plentymarkets online stores"},
     "categories"        : ["3519"],
     "author"            : "plentymarkets GmbH",
     "authorIcon"        : "icon_author_xs.png",
