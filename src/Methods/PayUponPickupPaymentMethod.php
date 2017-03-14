@@ -16,13 +16,8 @@ use Plenty\Plugin\ConfigRepository;
  */
 class PayUponPickupPaymentMethod extends PaymentMethodService
 {
-
     /** @var BasketRepositoryContract */
     private $basketRepo;
-
-
-    /** @var ConfigRepository */
-    private $configRepo;
 
     /** @var  SettingsService */
     private $settings;
@@ -30,14 +25,15 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     /** @var  Checkout */
     private $checkout;
 
-
     /**
     * PayUponPickupPaymentMethod constructor.
     * @param BasketRepositoryContract $basketRepo
     * @param SettingsService          $settingsService
+    * @param Checkout                 $checkout
     */
     public function __construct(BasketRepositoryContract    $basketRepo,
-                                SettingsService             $settingsService, Checkout $checkout)
+                                SettingsService             $settingsService,
+                                Checkout $checkout)
     {
         $this->basketRepo     = $basketRepo;
         $this->settings     = $settingsService;
@@ -79,10 +75,8 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
             $name = $this->settings->getSetting('name');
         }
 
-
         return $name;
     }
-
 
     /**
     * Get PayUponPickup Fee
@@ -102,9 +96,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
         {
               return (float)$this->settings->getSetting('feeForeign');
         }
-
     }
-
 
     /**
     * Get PayUponPickup Icon
@@ -124,7 +116,6 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
 
         return '';
     }
-
 
     /**
     * Get PayUponPickup Description
@@ -149,6 +140,4 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
                     break;
         }
     }
-
-
 }

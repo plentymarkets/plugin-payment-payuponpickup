@@ -3,7 +3,6 @@
 namespace PayUponPickup\Providers;
 
 use PayUponPickup\Extensions\PayUponPickupTwigServiceProvider;
-use PayUponPickup\Helper\PayUponPickupHelper;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodContainer;
 use PayUponPickup\Methods\PayUponPickupPaymentMethod;
@@ -17,7 +16,6 @@ use Plenty\Plugin\Templates\Twig;
  */
 class PayUponPickupServiceProvider extends ServiceProvider
 {
-
     /**
      * Register the route service provider
      */
@@ -30,17 +28,12 @@ class PayUponPickupServiceProvider extends ServiceProvider
      * Boot additional services for the payment method
      *
      * @param Twig $twig
-     * @param PayUponPickupHelper $paymentHelper
      * @param PaymentMethodContainer $payContainer
      */
     public function boot(   Twig $twig,
-                            PayUponPickupHelper $paymentHelper,
                             PaymentMethodContainer $payContainer)
     {
         $twig->addExtension(PayUponPickupTwigServiceProvider::class);
-
-        // Create the ID of the payment method if it doesn't exist yet
-        $paymentHelper->createMopIfNotExists();
 
         //Register the PayUponPickup Plugin
         $payContainer->register('plenty_payuponpickup::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
