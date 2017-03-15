@@ -1,6 +1,7 @@
 {
-    "version"           : "1.0.1",
+    "version"           : "1.0.2",
     "name"              : "PayUponPickup",
+    "marketplaceName"   : {"de":"Barzahlung","en":"Pay upon pickup"},
     "license"           : "AGPL-3.0",
     "pluginIcon"        : "icon_plugin_xs.png",
     "price"             : 0.00,
