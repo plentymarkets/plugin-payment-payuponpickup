@@ -1,5 +1,11 @@
 # Release Notes for PayUponPickup
 
+## 1.0.3 (2017-03-16)
+
+### Fixed
+
+- The settings will be loaded again.
+
 ## 1.0.2 (2017-03-15)
 
 ### Fixed

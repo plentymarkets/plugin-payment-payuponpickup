@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.0.3 (2017-03-16)
+
+### Gefixt
+
+- Die Einstellungen werden wieder geladen.
+
 ## 1.0.2 (2017-03-15)
 
 ### Gefixt
