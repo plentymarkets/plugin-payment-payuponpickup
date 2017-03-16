@@ -36,7 +36,7 @@ class PayUponPickupServiceProvider extends ServiceProvider
         $twig->addExtension(PayUponPickupTwigServiceProvider::class);
 
         //Register the PayUponPickup Plugin
-        $payContainer->register('plenty_payuponpickup::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
+        $payContainer->register('plenty::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
                                 [AfterBasketChanged::class, AfterBasketCreate::class]   );
     }
 }
