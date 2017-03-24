@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.0.4 (2017-03-24)
+
+### Gefixt
+
+- Nutzen die richtige ID der Zahlungsart aus dem System 
+
 ## 1.0.3 (2017-03-16)
 
 ### Gefixt

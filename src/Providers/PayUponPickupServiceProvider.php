@@ -3,6 +3,7 @@
 namespace PayUponPickup\Providers;
 
 use PayUponPickup\Extensions\PayUponPickupTwigServiceProvider;
+use Plenty\Modules\Basket\Events\BasketItem\AfterBasketItemAdd;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodContainer;
 use PayUponPickup\Methods\PayUponPickupPaymentMethod;
@@ -36,7 +37,7 @@ class PayUponPickupServiceProvider extends ServiceProvider
         $twig->addExtension(PayUponPickupTwigServiceProvider::class);
 
         //Register the PayUponPickup Plugin
-        $payContainer->register('plenty::PAYUPONPICKUP', PayUponPickupPaymentMethod::class,
-                                [AfterBasketChanged::class, AfterBasketCreate::class]   );
+        $payContainer->register('plenty::CASH', PayUponPickupPaymentMethod::class,
+            [ AfterBasketChanged::class, AfterBasketItemAdd::class, AfterBasketCreate::class]   );
     }
 }

@@ -1,5 +1,11 @@
 # Release Notes for PayUponPickup
 
+## 1.0.4 (2017-03-24)
+
+### Fixed
+
+- Use the correct payment method id.
+
 ## 1.0.3 (2017-03-16)
 
 ### Fixed
