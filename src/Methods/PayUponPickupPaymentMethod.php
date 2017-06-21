@@ -146,7 +146,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
      *
      * @return bool
      */
-    public function switchTo()
+    public function isSwitchableTo()
     {
         return true;
     }
@@ -156,7 +156,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
      *
      * @return bool
      */
-    public function switchFrom()
+    public function isSwitchableFrom()
     {
         return true;
     }
