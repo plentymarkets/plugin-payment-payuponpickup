@@ -1,5 +1,17 @@
 # Release Notes für Barzahlung
 
+## 1.0.5 (2017-06-22)
+
+### Hinzugefügt
+
+- für das Festlegen, ob der Kunde von einer Zahlart auf eine andere wechsel darf wurde eine Methode isSwitchableFrom hinzugefügt
+- für das Festlegen, ob auf eine Zahlart gewechselt werden darf, wurde eine Methode hinzugefügt: isSwitchableTo
+
+### Bekannte Probleme
+
+- Die Einstellungen für **Aufpreise** haben derzeit noch keine Funktion bei der Preisberechnung in der Kaufabwicklung (Checkout)
+
+
 ## 1.0.4 (2017-03-24)
 
 ### Gefixt
