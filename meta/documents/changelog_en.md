@@ -1,5 +1,11 @@
 # Release Notes for PayUponPickup
 
+## 1.0.5 (2017-06-27)
+
+### Fixed
+
+- The correct path for displaying the icon of the payment method is now used.
+
 ## 1.0.4 (2017-03-24)
 
 ### Fixed

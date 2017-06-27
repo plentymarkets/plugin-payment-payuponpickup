@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.0.5 (2017-06-27)
+
+### Gefixt
+
+- Es wird nun der korrekte Pfad für die Anzeige des Logos der Zahlungsart verwendet.
+
 ## 1.0.4 (2017-03-24)
 
 ### Gefixt
