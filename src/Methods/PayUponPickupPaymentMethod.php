@@ -113,7 +113,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
         elseif($this->settings->getSetting('logo') == 2)
         {
             $app = pluginApp(Application::class);
-                $icon = $app->getUrlPath('invoice').'/images/icon.png';
+                $icon = $app->getUrlPath('payuponpickup').'/images/icon.png';
 
                 return $icon;
         }
