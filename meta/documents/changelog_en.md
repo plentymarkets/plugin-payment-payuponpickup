@@ -1,5 +1,16 @@
 # Release Notes for PayUponPickup
 
+## 1.0.5 (2017-07-13)
+
+### Added
+
+- A method was added to determine if a customer can switch from this payment method to another payment method.
+- A method was added to determine if a customer can switch to this payment method from another payment method.
+
+### Known issues
+
+- The settings for **Surcharges** currently have no function when calculating prices in the checkout.
+
 ## 1.0.4 (2017-03-24)
 
 ### Fixed
