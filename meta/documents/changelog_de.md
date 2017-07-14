@@ -1,10 +1,16 @@
 # Release Notes für Barzahlung
 
-## 1.0.5 (2017-06-27)
+## 1.0.5 (2017-07-13)
 
-### Gefixt
+### Hinzugefügt
 
-- Es wird nun der korrekte Pfad für die Anzeige des Logos der Zahlungsart verwendet.
+- Es wurde eine Methode hinzugefügt, um festzulegen, ob ein Kunde von dieser Zahlungsart auf eine andere wechseln kann.
+- Es wurde eine Methode hinzugefügt, um festzulegen, ob ein Kunde von einer anderen Zahlungsart auf diese wechseln kann.
+
+### Bekannte Probleme
+
+- Die Einstellungen für **Aufpreise** haben derzeit noch keine Funktion bei der Preisberechnung in der Kaufabwicklung (Checkout).
+
 
 ## 1.0.4 (2017-03-24)
 
