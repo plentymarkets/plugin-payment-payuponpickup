@@ -144,4 +144,24 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
                     break;
         }
     }
+    
+    /**
+     * Check if it is allowed to switch to this payment method
+     *
+     * @return bool
+     */
+    public function isSwitchableTo()
+    {
+        return true;
+    }
+    
+    /**
+     * Check if it is allowed to switch from this payment method
+     *
+     * @return bool
+     */
+    public function isSwitchableFrom()
+    {
+        return true;
+    }
 }
