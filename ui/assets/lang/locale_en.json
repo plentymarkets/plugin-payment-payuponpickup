@@ -26,5 +26,6 @@
   "select": "Select",
   "cancel": "Cancel",
   "itemCategory": "Item category:",
-  "defaultLogo": "Default logo"
+  "defaultLogo": "Default logo",
+  "description": "Description"
 }
