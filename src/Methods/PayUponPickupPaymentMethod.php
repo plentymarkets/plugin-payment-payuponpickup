@@ -10,6 +10,7 @@ use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Plenty\Plugin\ConfigRepository;
+use Plenty\Plugin\Application;
 
 /**
  * Class PayUponPickupPaymentMethod
@@ -112,7 +113,10 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
         }
         elseif($this->settings->getSetting('logo') == 2)
         {
-            return 'layout/plugins/production/prepayment/images/icon.png';
+            $app = pluginApp(Application::class);
+                $icon = $app->getUrlPath('payuponpickup').'/images/icon.png';
+
+                return $icon;
         }
 
         return '';
