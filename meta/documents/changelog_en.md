@@ -1,5 +1,16 @@
 # Release Notes for PayUponPickup
 
+## 1.0.6 (UNKNOWN)
+
+### Added
+
+- Settings for **Infoseite** were added.
+- Settings for **Description** were added.
+
+### Changed
+
+- Removed surcharges for the payment method.
+
 ## 1.0.5 (2017-07-13)
 
 ### Added
