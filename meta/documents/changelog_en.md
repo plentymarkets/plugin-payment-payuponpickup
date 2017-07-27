@@ -1,6 +1,6 @@
 # Release Notes for PayUponPickup
 
-## 1.0.6 (UNKNOWN)
+## 1.1 (UNKNOWN)
 
 ### Added
 

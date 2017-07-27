@@ -1,6 +1,6 @@
 # Release Notes für Barzahlung
 
-## 1.0.6 (UNKNOWN)
+## 1.1 (UNKNOWN)
 
 ### Hinzugefügt
 
