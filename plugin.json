@@ -26,7 +26,8 @@
     }],
     "dependencies"      : [],
     "runOnBuild"        : [
-        "PayUponPickup\\Migrations\\CreateSettings_1_0_0"
+        "PayUponPickup\\Migrations\\CreateSettings_1_0_0",
+        "PayUponPickup\\Migrations\\CreateSettings_1_1_0"
     ]
 }
 
