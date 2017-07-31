@@ -4,6 +4,7 @@ namespace PayUponPickup\Methods;
 
 use IO\Services\SessionStorageService;
 use PayUponPickup\Services\SettingsService;
+use Plenty\Modules\Category\Contracts\CategoryRepositoryContract;
 use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
@@ -86,6 +87,8 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     */
     public function getFee()
     {
+
+        return 0.00;
         $basket = $this->basketRepo->load();
 
         // Shipping Country ID with ID = 1 belongs to Germany
@@ -129,22 +132,12 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     */
     public function getDescription( ConfigRepository $config )
     {
-        switch($this->settings->getSetting('infoPageType'))
-        {
-              case 1:
-                    return $this->settings->getSetting('infoPageExtern');
-                    break;
-
-              case 2:
-                    return $this->settings->getSetting('infoPageIntern');
-                    break;
-
-              default:
-                    return '';
-                    break;
-        }
+      /** @var FrontendSessionStorageFactoryContract $session */
+        $session = pluginApp(FrontendSessionStorageFactoryContract::class);
+        $lang = $session->getLocaleSettings()->language;
+        return $this->settings->getSetting('description', $lang);
     }
-    
+
     /**
      * Check if it is allowed to switch to this payment method
      *
@@ -154,7 +147,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     {
         return true;
     }
-    
+
     /**
      * Check if it is allowed to switch from this payment method
      *
@@ -163,5 +156,38 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     public function isSwitchableFrom()
     {
         return true;
+    }
+
+    /**
+     * Get PrepaymentSourceUrl
+     *
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        /** @var FrontendSessionStorageFactoryContract $session */
+        $session = pluginApp(FrontendSessionStorageFactoryContract::class);
+        $lang = $session->getLocaleSettings()->language;
+
+        $infoPageType = $this->settings->getSetting('infoPageType', $lang);
+
+        switch ($infoPageType)
+        {
+            case 1:
+                // internal
+                $categoryId = (int) $this->settings->getSetting('infoPageIntern', $lang);
+                if($categoryId  > 0)
+                {
+                    /** @var CategoryRepositoryContract $categoryContract */
+                    $categoryContract = pluginApp(CategoryRepositoryContract::class);
+                    return $categoryContract->getUrl($categoryId, $lang);
+                }
+                return '';
+            case 2:
+                // external
+                return $this->settings->getSetting('infoPageExtern', $lang);
+            default:
+                return '';
+        }
     }
 }

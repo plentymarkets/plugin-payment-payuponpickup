@@ -87,8 +87,7 @@ The template plugin **Ceres** allows you to display the logo of your payment met
 
 ##### Linking the logo with a template container:
 
-1. Click on **Start&nbsp;» Plugins**. 
-2. Click on the **Content** tab. 
+1. Go to **Plugins » Content**. 
 3. Go to the **Pay upon pickup icon** area. 
 4. Activate the container **Homepage: Payment method container**. 
 5. **Save** the settings.<br />→ The logo of the payment method will be displayed on the homepage of the online store.

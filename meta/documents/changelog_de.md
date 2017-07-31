@@ -1,5 +1,16 @@
 # Release Notes für Barzahlung
 
+## 1.1.0 (UNKNOWN)
+
+### Hinzugefügt
+
+- Einstellungen für **Infoseite** wurden hinzugefügt.
+- Einstellungen für **Beschreibung** wurden hinzugefügt.
+
+### Geändert
+
+- Aufpreise der Zahlungsart wurden entfernt.
+
 ## 1.0.5 (2017-07-13)
 
 ### Hinzugefügt
