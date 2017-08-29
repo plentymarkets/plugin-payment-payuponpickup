@@ -1,5 +1,10 @@
 # Release Notes for PayUponPickup
 
+## 1.1.1 (2017-08-30)
+
+### Geändert
+- Updated user guide.
+
 ## 1.1.0 (2017-07-31)
 
 ### Added
