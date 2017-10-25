@@ -4,7 +4,7 @@
 
 ### Geändert
 
-- Der Einhängepunkt im Systembaum ist nun System » Aufträge » Zahlung » PrePayment » Vorkasse.
+- Der Einhängepunkt im Systembaum ist nun **System » Aufträge » Zahlung » PayUponPickup » Barzahlung**.
 
 ## 1.1.1 (2017-08-30)
 

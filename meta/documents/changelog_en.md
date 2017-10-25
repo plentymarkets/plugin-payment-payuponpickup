@@ -4,11 +4,11 @@
 
 ### Changed
 
-- Der Einhängepunkt im Systembaum ist nun System » Aufträge » Zahlung » PrePayment » Vorkasse.
+- The entry point in the system tree is now **System » Orders » Payment » PayUponPickup » Pay upon pickup**.
 
 ## 1.1.1 (2017-08-30)
 
-### Geändert
+### Changed
 - Updated user guide.
 
 ## 1.1.0 (2017-07-31)
