@@ -4,7 +4,7 @@
   "menuEntries": [
     {
       "label": "Barzahlung",
-      "menu": "settings/orders",
+      "menu": "settings/orders/PayUponPickup",
       "urlKey": "payuponpickup",
       "entryPoint": "index.html"
     }
