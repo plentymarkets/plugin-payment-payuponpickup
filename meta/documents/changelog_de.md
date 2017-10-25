@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.1.2 (2017-10-25)
+
+### Geändert
+
+- Der Einhängepunkt im Systembaum ist nun System » Aufträge » Zahlung » PrePayment » Vorkasse.
+
 ## 1.1.1 (2017-08-30)
 
 ### Geändert
