@@ -1,6 +1,6 @@
 # Release Notes für Barzahlung
 
-## 1.1.2 (2017-10-25)
+## 1.1.2 (2017-10-26)
 
 ### Geändert
 
