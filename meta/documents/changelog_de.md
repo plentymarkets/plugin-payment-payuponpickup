@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.1.3 (2017-11-17)
+
+### Gefixt
+
+- Die Variable `$MethodOfPaymentName` in E-Mail-Vorlagen wird nun sprachabhängig ausgegeben.
+
 ## 1.1.2 (2017-10-26)
 
 ### Geändert
