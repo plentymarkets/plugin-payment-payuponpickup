@@ -63,20 +63,9 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
      * @param $lang
      * @return string
      */
-    public function getName($lang = '')
+    public function getName($lang = 'de')
     {
-        if($lang == '')
-        {
-            /** @var FrontendSessionStorageFactoryContract $session */
-            $session = pluginApp(FrontendSessionStorageFactoryContract::class);
-            $lang = $session->getLocaleSettings()->language;
-        }
-
-        if(!empty($lang))
-        {
-            return $this->settings->getSetting('name', $lang);
-        }
-        return $this->settings->getSetting('name');
+        return $this->settings->getSetting('name', $lang);
     }
 
     /**
