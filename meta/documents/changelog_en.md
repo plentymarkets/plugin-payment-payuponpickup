@@ -1,8 +1,14 @@
 # Release Notes for PayUponPickup
 
+## 1.1.4 (2017-11-23)
+
+### Fixed
+
+- The `$MethodOfPaymentName` variable will now be displayed in the respective language in email templates.
+
 ## 1.1.3 (2017-17-22)
 
-### Geändert
+### Changed
 
 - Update User guide
 
