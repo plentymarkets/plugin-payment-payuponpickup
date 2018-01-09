@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.1.5 (2018-01-09)
+
+### Geändert
+
+- Menüpfad geändert
+
 ## 1.1.4 (2017-11-23)
 
 ### Gefixt

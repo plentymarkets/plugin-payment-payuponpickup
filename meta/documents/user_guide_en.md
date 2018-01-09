@@ -8,7 +8,7 @@ In order to make this payment method available in your online store, you have to
 
 ##### Setting up a payment method:
 
-1. Go to **System&nbsp;» Orders&nbsp;» Payment » PayUponPickup » Pay upon pickup**. 
+1. Go to **System&nbsp;» Orders&nbsp;» Payment » Plugins » Pay upon pickup**. 
 2. Select a Client (store). 
 3. Carry out the settings. Pay attention to the information given in table 1. 
 4. **Save** the settings.
