@@ -4,7 +4,7 @@
 
 ### Geändert
 
-- Menüpfad geändert
+- Neuer Menüpfad **System&nbsp;» Aufträge&nbsp;» Zahlung » Plugins » Barzahlung**.
 
 ## 1.1.4 (2017-11-23)
 

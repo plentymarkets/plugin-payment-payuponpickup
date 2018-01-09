@@ -1,5 +1,11 @@
 # Release Notes for PayUponPickup
 
+## 1.1.5 (2018-01-09)
+
+### Changed
+
+- New menu path **System&nbsp;» Orders&nbsp;» Payment » Plugins » Pay upon pickup**.
+
 ## 1.1.4 (2017-11-23)
 
 ### Fixed
