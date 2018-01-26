@@ -1,5 +1,10 @@
 # Release Notes für Barzahlung
 
+## 1.1.6 (unknown)
+
+### Geändert
+- User guide erweitert.
+
 ## 1.1.5 (2018-01-09)
 
 ### Geändert
