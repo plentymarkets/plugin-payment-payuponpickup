@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.1.7 (2018-08-02)
+
+### Hinzugefügt
+
+- Sprachabhängige Texte können nun über das Mehrsprachigkeits-Interface angepasst werden.
+
 ## 1.1.6 (unknown)
 
 ### Geändert

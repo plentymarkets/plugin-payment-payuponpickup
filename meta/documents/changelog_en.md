@@ -1,5 +1,11 @@
 # Release Notes for PayUponPickup
 
+## 1.1.7 (2018-08-02)
+
+### Added
+
+- Language-dependent texts can now be edited via the multilingualism interface.
+
 ## 1.1.6 (unknown)
 
 ### Changed
