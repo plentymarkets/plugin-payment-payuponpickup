@@ -71,10 +71,25 @@ class Settings extends Model
                                              "feeDomestic"       ,
                                              "feeForeign"        );
 
-    const AVAILABLE_LANGUAGES = array( "de",
-                                       "en",
-                                       "fr",
-                                       "es" );
+    const AVAILABLE_LANGUAGES = array(  "de",
+                                        "en",
+                                        "bg",
+                                        "fr",
+                                        "it",
+                                        "es",
+                                        "tr",
+                                        "nl",
+                                        "pl",
+                                        "pt",
+                                        "nn",
+                                        "da",
+                                        "se",
+                                        "cz",
+                                        "ro",
+                                        "ru",
+                                        "sk",
+                                        "cn",
+                                        "vn");
 
     const DEFAULT_LANGUAGE = "de";
 

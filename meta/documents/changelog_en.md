@@ -1,10 +1,14 @@
 # Release Notes for PayUponPickup
 
-## 1.1.7 (2018-08-02)
+## 1.1.8 (2018-08-07)
 
 ### Added
 
-- Language-dependent texts can now be edited via the multilingualism interface.
+- Further languages have been added for the plugin UI.
+
+### Fixed
+
+- Problems with saving multi-client settings in the Plugin-UI have been fixed.
 
 ## 1.1.6 (unknown)
 

@@ -1,10 +1,14 @@
 # Release Notes für Barzahlung
 
-## 1.1.7 (2018-08-02)
+## 1.1.8 (2018-08-07)
 
 ### Hinzugefügt
 
-- Sprachabhängige Texte können nun über das Mehrsprachigkeits-Interface angepasst werden.
+- Weitere Sprachen für die Plugin-UI wurden hinzugefügt.
+
+### Gefixt
+
+- Probleme bei dem Speichern von Einstellungen der Multimandanten in der Plugin-UI wurden behoben.
 
 ## 1.1.6 (unknown)
 
