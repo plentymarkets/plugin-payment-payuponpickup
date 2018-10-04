@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.1.9 (2018-10-04)
+
+### Geändert
+
+- Support Informationen ergänzt
+
 ## 1.1.8 (2018-08-07)
 
 ### Hinzugefügt
