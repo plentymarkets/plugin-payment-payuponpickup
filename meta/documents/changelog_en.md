@@ -1,5 +1,11 @@
 # Release Notes for PayUponPickup
 
+## 1.2.0 (2018-10-23)
+
+### Fixed
+
+- A possible problem with deploying the plugin has been fixed.
+
 ## 1.1.9 (2018-10-04)
 
 ### Changed

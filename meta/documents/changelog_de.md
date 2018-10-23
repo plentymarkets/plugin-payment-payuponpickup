@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.2.0 (2018-10-23)
+
+### Gefixt
+
+- Ein eventuell auftretendes Problem beim Bereitstellen des Plugins wurde behoben.
+
 ## 1.1.9 (2018-10-04)
 
 ### Geändert
