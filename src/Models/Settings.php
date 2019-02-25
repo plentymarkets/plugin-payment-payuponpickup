@@ -29,14 +29,12 @@ class Settings extends Model
                                              "infoPageIntern"      => "int"     ,
                                              "infoPageExtern"      => "string"  ,
                                              "description"         => "string"  ,
-                                             "shippingCountries"   => ['int']   ,
                                              "logo"                => "int"     ,
                                              "logoUrl"             => "string"  ,
                                              "feeDomestic"         => "float"   ,
                                              "feeForeign"          => "float"   );
 
-    const SETTINGS_DEFAULT_VALUES = array(   "shippingCountries"   => ""                 ,
-                                             "feeDomestic"         => "0.00"             ,
+    const SETTINGS_DEFAULT_VALUES = array(   "feeDomestic"         => "0.00"             ,
                                              "feeForeign"          => "0.00"             ,
                                              "de"  => array( "name"                => "Barzahlung"       ,
                                                              "infoPageType"        => "2"                ,
@@ -67,8 +65,7 @@ class Settings extends Model
                                                              "logoUrl"             => ""                 ,
                                                              "description"         => ""                 ) );
 
-    const LANG_INDEPENDENT_SETTINGS = array( "shippingCountries" ,
-                                             "feeDomestic"       ,
+    const LANG_INDEPENDENT_SETTINGS = array( "feeDomestic"       ,
                                              "feeForeign"        );
 
     const AVAILABLE_LANGUAGES = array(  "de",
