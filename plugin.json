@@ -28,6 +28,7 @@
     "runOnBuild"        : [
         "PayUponPickup\\Migrations\\CreateSettings_1_0_0",
         "PayUponPickup\\Migrations\\CreateSettings_1_1_0",
-        "PayUponPickup\\Migrations\\CreateShippingCountrySettings_1_0"
+        "PayUponPickup\\Migrations\\CreateShippingCountrySettings_1_0",
+        "PayUponPickup\\Migrations\\MigrateShippingCountries_1_0"
     ]
 }
