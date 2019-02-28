@@ -1,5 +1,5 @@
 {
-    "version"           : "1.2.0",
+    "version"           : "1.2.1",
     "name"              : "PayUponPickup",
     "marketplaceName"   : {"de":"Barzahlung","en":"Pay upon pickup"},
     "license"           : "AGPL-3.0",
@@ -27,7 +27,8 @@
     "dependencies"      : [],
     "runOnBuild"        : [
         "PayUponPickup\\Migrations\\CreateSettings_1_0_0",
-        "PayUponPickup\\Migrations\\CreateSettings_1_1_0"
+        "PayUponPickup\\Migrations\\CreateSettings_1_1_0",
+        "PayUponPickup\\Migrations\\CreateShippingCountrySettings_1_0",
+        "PayUponPickup\\Migrations\\MigrateShippingCountries_1_0"
     ]
 }
-

@@ -1,5 +1,11 @@
 # Release Notes for PayUponPickup
 
+## 1.2.1 (2019-02-25)
+
+### Changed
+
+- The settings for shipping countries have been optimized.
+
 ## 1.2.0 (2018-10-23)
 
 ### Fixed

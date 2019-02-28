@@ -1,5 +1,11 @@
 # Release Notes für Barzahlung
 
+## 1.2.1 (2019-02-25)
+
+### Geändert
+
+- Die Einstellungen für Lieferländer wurden optimiert.
+
 ## 1.2.0 (2018-10-23)
 
 ### Gefixt
