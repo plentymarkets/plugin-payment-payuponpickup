@@ -12,5 +12,4 @@ class CreateShippingCountrySettings_1_0
     {
         $migrate->createTable(ShippingCountrySettings::class);
     }
-
 }
