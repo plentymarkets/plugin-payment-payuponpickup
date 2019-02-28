@@ -26,7 +26,7 @@ class MigrateShippingCountries_1_0
             $this->migrateShippingCountries();
         } catch (\Exception $ex) {
             $this->getLogger(__CLASS__.'::'.__FUNCTION__)->debug('PayUponPickup::PaymentMethod.paymentMethodName', $ex->getMessage().' - '.$ex->getTraceAsString());
-            $this->getLogger(__CLASS__.'::'.__FUNCTION__)->error('PayUponPickup', $ex->getMessage().' - '.$ex->getTraceAsString());
+            $this->getLogger(__CLASS__.'::'.__FUNCTION__)->error('PayUponPickup::PaymentMethod.paymentMethodName', $ex->getMessage().' - '.$ex->getTraceAsString());
         }
 
     }
