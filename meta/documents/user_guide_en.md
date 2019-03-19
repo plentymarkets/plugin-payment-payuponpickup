@@ -4,13 +4,17 @@ With this plugin, you integrate the payment method **Pay upon pickup** into your
 
 ## Setting up a payment method
 
-In order to make this payment method available in your online store, you have to carry out the settings in the plentymarkets back end. In addition, check the settings for Permitted payment methods in the <strong><a href="https://knowledge.plentymarkets.com/en/order-processing/payment/managing-payment-methods#30" target="_blank">customer classes</a></strong> and for Blocked payment methods in the <strong><a href="https://knowledge.plentymarkets.com/en/order-processing/fulfilment/preparing-the-shipment#1000" target="_blank">shipping profiles</a></strong>.
+To make the payment method available in your online store, you have to carry out settings in the back end of your plentymarkets system.
+
+First of all, activate the payment method once in the **System » System Settings » Orders » Payment » Methods** menu. More information on carrying out this setting is available on the <strong><a href="https://knowledge.plentymarkets.com/en/payment/managing-payment-methods#20" target="_blank">Managing payment methods</a></strong> page of the manual.
+
+In addition, make sure that the payment method is included among the Permitted payment methods in the <strong><a href="https://knowledge.plentymarkets.com/en/crm/managing-contacts#15" target="_blank">customer classes</a></strong> and that it is not listed among the Blocked payment methods in the <strong><a href="https://knowledge.plentymarkets.com/en/order-processing/fulfilment/preparing-the-shipment#1000" target="_blank">shipping profiles</a></strong>.
 
 ##### Setting up a payment method:
 
-1. Go to **System&nbsp;» Orders&nbsp;» Payment » Plugins » Pay upon pickup**. 
-2. Select a Client (store). 
-3. Carry out the settings. Pay attention to the information given in table 1. 
+1. Go to **System&nbsp;» System settings » Orders&nbsp;» Payment » Plugins » Pay upon pickup**.
+2. Select a Client (store).
+3. Carry out the settings. Pay attention to the information given in table 1.
 4. **Save** the settings.
 
 <table>
@@ -45,14 +49,14 @@ In order to make this payment method available in your online store, you have to
 				<b>Info page</b>
 			</td>
 			<td>
-				Select a category page of the type <strong>content</strong> or an external website to provide <strong><a href="https://knowledge.plentymarkets.com/en/order-processing/payment/managing-bank-details#40">information about the payment method</a></strong>.
+				Select a category page of the type <strong>content</strong> or an external website to provide <strong><a href="https://knowledge.plentymarkets.com/en/payment/managing-bank-details#40">information about the payment method</a></strong>.
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<b>Info page internal/<br />Info page external</b>
 			</td>
-			<td>In the description of the payment method, a link to the <strong>details</strong> of the payment method is displayed.<br /><strong>Infopage (internal):</strong> By entering the category ID or using the selector, pick a category page of the type <strong>content</strong> to provide additional information on the payment method.<br /><strong>Info page (external):</strong> Enter the URL of an external information page. <strong><i>Important:</i></strong>Use either http:// or https://.<br />If no input is made, no link will be shown.
+			<td>In the description of the payment method, a link to the <strong>details</strong> of the payment method is displayed.<br /><strong>Infopage (internal):</strong> By entering the category ID or using the selector, pick a category page of the type <strong>content</strong> to provide additional information on the payment method.<br /><strong>Info page (external):</strong> Enter the URL of an external information page. <strong><i>Important: </i></strong>Use either http:// or https://.<br />If no input is made, no link will be shown.
 			</td>
 		</tr>
         <tr>
@@ -96,8 +100,8 @@ The template plugin **Ceres** allows you to display the logo of your payment met
 
 ##### Linking the logo with a template container:
 
-1. Go to **Plugins » Content**. 
-3. Go to the **Pay upon pickup icon** area. 
+1. Go to **CMS » Container links**.
+3. Go to the **Pay upon pickup icon** area.
 4. Activate the container **Homepage: Payment method container**. 
 5. **Save** the settings.<br />→ The logo of the payment method will be displayed on the homepage of the online store.
 
