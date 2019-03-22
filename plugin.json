@@ -1,5 +1,5 @@
 {
-    "version"           : "1.2.1",
+    "version"           : "1.2.2",
     "name"              : "PayUponPickup",
     "marketplaceName"   : {"de":"Barzahlung","en":"Pay upon pickup"},
     "license"           : "AGPL-3.0",
@@ -8,7 +8,7 @@
     "description"       : "Pay upon pickup plugin for plentymarkets online stores",
     "shortDescription"  : {"de": "Zahlungsart Barzahlung für plentymarkets Webshops","en": "Payment method Pay upon pickup for plentymarkets online stores"},
     "categories"        : ["3519"],
-    "author"            : "plentymarkets GmbH",
+    "author"            : "plentymarkets AG",
     "authorIcon"        : "icon_author_xs.png",
     "email"             : "sales@plentymarkets.com",
     "phone"             : "+49 561 98 681 100",
