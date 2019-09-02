@@ -51,14 +51,14 @@ class PayUponPickupAssistantSettingsHandler implements WizardSettingsHandler
     private function saveSettings($webstoreId, $data)
     {
         $settings = [
-            'name' => $data['name'],
-            'infoPageType' => $data['infoPageType'],
-            'infoPageIntern' => $data['infoPageIntern'],
-            'infoPageExtern' => $data['infoPageExtern'],
-            'logo' => $data['logo'],
-            'logoUrl' => $data['logo_url'],
+            'name' => $data['name'] ?? '',
+            'infoPageType' => $data['infoPageType'] ?? 0,
+            'infoPageIntern' => $data['infoPageIntern'] ?? '',
+            'infoPageExtern' => $data['infoPageExtern'] ?? '',
+            'logo' => $data['logo'] ?? 0,
+            'logoUrl' => $data['logo_url'] ?? '',
             'plentyId' => $webstoreId,
-            'shippingCountries' => $data['shippingCountries'],
+            'shippingCountries' => $data['shippingCountries'] ?? [],
             'feeDomestic' => 0.00,
             'feeForeign' => 0.00
         ];
@@ -157,19 +157,6 @@ class PayUponPickupAssistantSettingsHandler implements WizardSettingsHandler
             $pluginLayoutContainerRepo = pluginApp(PluginLayoutContainerRepositoryContract::class);
 
             $containerListEntries = [];
-
-/*            // Default entries
-            $containerListEntries[] = $this->createContainerDataListEntry(
-                $webstoreId,
-                'Ceres::MyAccount.OrderHistoryPaymentInformation',
-                'Invoice\Providers\InvoiceOrderConfirmationDataProvider'
-            );
-
-            $containerListEntries[] = $this->createContainerDataListEntry(
-                $webstoreId,
-                'Ceres::OrderConfirmation.AdditionalPaymentInformation',
-                'Invoice\Providers\InvoiceOrderConfirmationDataProvider'
-            );*/
 
             if (isset($data['paymentMethodIcon']) && $data['paymentMethodIcon']) {
                 $containerListEntries[] = $this->createContainerDataListEntry(
