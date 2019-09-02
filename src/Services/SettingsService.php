@@ -81,8 +81,8 @@ class SettingsService
         /** @var Webstore $record */
         foreach ($result as $record) {
             if ($record->storeIdentifier > 0) {
-                $settings = $this->loadClientSettingsIfExist($record->storeIdentifier, null);
-                if (count($settings)) {
+                $settings = $this->clientSettingsExist($record->storeIdentifier, null);
+                if ($settings) {
                     $clients[] = $record->storeIdentifier;
                 }
             }
@@ -408,14 +408,14 @@ class SettingsService
     }
 
     /**
-     * Load settings for specified system clients by plentyId and language if exist
+     * Check if settings exist for plentyId and language
      *
      * @param $plentyId
      * @param $lang
      *
-     * @return Settings[]
+     * @return boolean
      */
-    public function loadClientSettingsIfExist($plentyId, $lang)
+    public function clientSettingsExist($plentyId, $lang)
     {
 
         /** @var Query $query */
@@ -430,7 +430,7 @@ class SettingsService
         /** @var Settings[] $clientSettings */
         $clientSettings = $query->get();
 
-        if( !count($clientSettings) > 0)
+        if(!count($clientSettings))
         {
             $clientSettings = $query->get();
         }

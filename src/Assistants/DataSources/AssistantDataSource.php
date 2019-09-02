@@ -41,11 +41,12 @@ class AssistantDataSource extends BaseWizardDataSource
         $data = [];
         $pids = $this->settingsService->getClientsIds();
         foreach ($pids as $pid) {
-            $settings = $this->settingsService->loadClientSettingsIfExist($pid, null);
-            if (count($settings)) {
+            $settingsExist = $this->settingsService->clientSettingsExist($pid, null);
+            if ($settingsExist) {
                 $settings = $this->settingsService->getSettingsForPlentyId($pid, null);
-                $data[$pid]['config_name'] = $pid;
+                $data = [];
                 $data[$pid] = $settings;
+                $data[$pid]['config_name'] = $pid;
                 if($data[$pid]['infoPageType'] > 0)
                 {
                     $data[$pid]['info_page_toggle'] = true;

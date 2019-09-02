@@ -36,7 +36,7 @@ class PayUponPickupAssistantSettingsHandler implements WizardSettingsHandler
         $webstoreId = $data['config_name'];
 
         if(!is_numeric($webstoreId) || $webstoreId <= 0){
-            $webstoreId = $this->getWebstore($webstoreId)->storeIdentifier;
+            $webstoreId = $this->getWebstore($parameter['optionId'])->storeIdentifier;
         }
 
         $this->saveSettings($webstoreId, $data);
@@ -64,8 +64,8 @@ class PayUponPickupAssistantSettingsHandler implements WizardSettingsHandler
         ];
         /** @var SettingsService $settingsService */
         $settingsService = pluginApp(SettingsService::class);
-        $getSettings = $settingsService->loadClientSettingsIfExist($webstoreId,$this->getLanguage());
-        if(!count($getSettings)){
+        $getSettings = $settingsService->clientSettingsExist($webstoreId,$this->getLanguage());
+        if(!$getSettings){
             $settingsService->updateClient($webstoreId);
         }
         $settingsService->saveSettings($settings);
