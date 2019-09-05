@@ -3,6 +3,8 @@
 namespace PayUponPickup\Assistants\DataSources;
 
 use PayUponPickup\Services\SettingsService;
+use Plenty\Modules\Plugin\Contracts\PluginLayoutContainerRepositoryContract;
+use Plenty\Modules\System\Contracts\WebstoreRepositoryContract;
 use Plenty\Modules\Wizard\Models\WizardData;
 use Plenty\Modules\Wizard\Services\DataSources\BaseWizardDataSource;
 
@@ -47,13 +49,32 @@ class AssistantDataSource extends BaseWizardDataSource
                 $data = [];
                 $data[$pid] = $settings;
                 $data[$pid]['config_name'] = $pid;
-                if($data[$pid]['infoPageType'] > 0)
-                {
-                    $data[$pid]['info_page_toggle'] = true;
-                }
+                $data[$pid]['info_page_toggle'] = $data[$pid]['infoPageType'] > 0;
+                $data[$pid]['info_page_type'] = $data[$pid]['infoPageType'] == 2 ? 2 : 1;
+                $data[$pid]['logo'] = $data[$pid]['logo'] > 1;
+                $data[$pid]['logo_url'] = $data[$pid]['logoUrl'];
+                $data[$pid]['paymentMethodIcon'] = $this->logoInFooter($pid);
             }
         }
         return $data;
+    }
+
+    /**
+     * Checks if the container link for the icon is set
+     *
+     * @param int $plentyId
+     * @return boolean
+     */
+    private function logoInFooter($plentyId)
+    {
+        /** @var WebstoreRepositoryContract $webstoreRepo */
+        $webstoreRepo = pluginApp(WebstoreRepositoryContract::class);
+        /** Webstore $webstore **/
+        $webstore = $webstoreRepo->findByPlentyId($plentyId);
+        /** @var PluginLayoutContainerRepositoryContract $pluginLayoutContainerRepo */
+        $pluginLayoutContainerRepo = pluginApp(PluginLayoutContainerRepositoryContract::class);
+        $containers = $pluginLayoutContainerRepo->all($webstore->pluginSetId);
+        return $containers->pluck('dataProviderKey')->contains('PayUponPickup\Providers\Icon\IconProvider');
     }
 
     /**

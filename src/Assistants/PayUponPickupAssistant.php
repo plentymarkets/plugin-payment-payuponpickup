@@ -183,7 +183,10 @@ class PayUponPickupAssistant extends WizardProvider
                                 "logo_url" => [
                                     'type' => 'file',
                                     'defaultValue' => '',
-                                    'showPreview' => true
+                                    'showPreview' => true,
+                                    'options' => [
+                                        'name' => 'assistant.logoURLTypeName'
+                                    ]
                                 ],
                             ],
                         ],
