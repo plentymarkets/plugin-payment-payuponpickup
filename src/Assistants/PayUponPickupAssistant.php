@@ -109,23 +109,23 @@ class PayUponPickupAssistant extends WizardProvider
                             "form" => [
                                 "infoPageType" => [
                                     'type' => 'select',
-                                    'defaultValue' => '1',
+                                    'defaultValue' => 1,
                                     'options' => [
                                         'name' => 'assistant.infoPageTypeName',
                                         'listBoxValues' => [
                                             [
                                                 "caption" => 'assistant.infoPageInternal',
-                                                "value" => '1',
+                                                "value" => 1,
                                             ],
                                             [
                                                 "caption" => 'assistant.infoPageExternal',
-                                                "value" => '2',
+                                                "value" => 2,
                                             ],
                                         ],
                                     ],
                                 ],
                             ],
-                        ],
+                        ], 
                         [
                             "title" => '',
                             "description" => 'assistant.infoPageNameInternal',
