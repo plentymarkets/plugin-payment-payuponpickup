@@ -71,10 +71,13 @@ class AssistantDataSource extends BaseWizardDataSource
         $webstoreRepo = pluginApp(WebstoreRepositoryContract::class);
         /** Webstore $webstore **/
         $webstore = $webstoreRepo->findByPlentyId($plentyId);
-        /** @var PluginLayoutContainerRepositoryContract $pluginLayoutContainerRepo */
-        $pluginLayoutContainerRepo = pluginApp(PluginLayoutContainerRepositoryContract::class);
-        $containers = $pluginLayoutContainerRepo->all($webstore->pluginSetId);
-        return $containers->pluck('dataProviderKey')->contains('PayUponPickup\Providers\Icon\IconProvider');
+        if(!is_null($webstore) && !is_null($webstore->pluginSetId)) {
+            /** @var PluginLayoutContainerRepositoryContract $pluginLayoutContainerRepo */
+            $pluginLayoutContainerRepo = pluginApp(PluginLayoutContainerRepositoryContract::class);
+            $containers = $pluginLayoutContainerRepo->all($webstore->pluginSetId);
+            return $containers->pluck('dataProviderKey')->contains('PayUponPickup\Providers\Icon\IconProvider');
+        }
+        return false;
     }
 
     /**
