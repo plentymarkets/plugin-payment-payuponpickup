@@ -56,7 +56,7 @@ class PayUponPickupAssistantSettingsHandler implements WizardSettingsHandler
             'infoPageIntern' => $data['infoPageIntern'] ?? '',
             'infoPageExtern' => $data['infoPageExtern'] ?? '',
             'logo' => $data['logo'] ?? 0,
-            'logoUrl' => $data['logo_url'] ?? '',
+            'logoUrl' => $data['logo'] > 0 ? ($data['logo_url'] ?? '') : '',
             'plentyId' => $webstoreId,
             'shippingCountries' => $data['shippingCountries'] ?? [],
             'feeDomestic' => 0.00,
