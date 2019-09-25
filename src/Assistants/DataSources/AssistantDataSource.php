@@ -51,7 +51,7 @@ class AssistantDataSource extends BaseWizardDataSource
                 $data[$pid]['config_name'] = $pid;
                 $data[$pid]['info_page_toggle'] = $data[$pid]['infoPageType'] > 0;
                 $data[$pid]['info_page_type'] = $data[$pid]['infoPageType'] == 2 ? 2 : 1;
-                $data[$pid]['logo'] = $data[$pid]['logo'] > 0;
+                $data[$pid]['logo'] = $data[$pid]['logo'] == 1;
                 $data[$pid]['logo_url'] = $data[$pid]['logoUrl'];
                 $data[$pid]['paymentMethodIcon'] = $this->logoInFooter($pid);
             }
