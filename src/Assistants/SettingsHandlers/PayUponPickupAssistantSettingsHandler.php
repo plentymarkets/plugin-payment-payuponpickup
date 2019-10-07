@@ -60,11 +60,12 @@ class PayUponPickupAssistantSettingsHandler implements WizardSettingsHandler
             'plentyId' => $webstoreId,
             'shippingCountries' => $data['shippingCountries'] ?? [],
             'feeDomestic' => 0.00,
-            'feeForeign' => 0.00
+            'feeForeign' => 0.00,
+            'lang' => $this->getLanguage()
         ];
         /** @var SettingsService $settingsService */
         $settingsService = pluginApp(SettingsService::class);
-        $getSettings = $settingsService->clientSettingsExist($webstoreId,$this->getLanguage());
+        $getSettings = $settingsService->clientSettingsExist($webstoreId);
         if(!$getSettings){
             $settingsService->updateClient($webstoreId);
         }

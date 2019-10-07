@@ -43,7 +43,7 @@ class AssistantDataSource extends BaseWizardDataSource
         $data = [];
         $pids = $this->settingsService->getClientsIds();
         foreach ($pids as $pid) {
-            $settingsExist = $this->settingsService->clientSettingsExist($pid, null);
+            $settingsExist = $this->settingsService->clientSettingsExist($pid);
             if ($settingsExist) {
                 $settings = $this->settingsService->getSettingsForPlentyId($pid, null);
                 $data = [];
