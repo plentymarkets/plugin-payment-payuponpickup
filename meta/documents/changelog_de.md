@@ -1,9 +1,12 @@
 # Release Notes für Barzahlung
 
-## 2.0.0 (2019-09-25)
+## 2.0.0 (2019-10-14)
 
 ### Hinweis 
-- Die Einstellungen für das Barzahlungs-Plugin wurden in einen Assistenten überführt und sind nun unter **System » Assistenten » Payment** zu finden.
+- Die Einstellungen für das Barzahlungs-Plugin wurden in einen Assistenten überführt und sind nun unter **Einrichtung » Assistenten » Payment** zu finden.
+
+### Geändert
+- Die Beschreibung und Name der Zahlungsart wird nun auch über **CMS » Mehrsprachigkeit** gepflegt.
 
 ## 1.3.4 (2019-03-22)
 
