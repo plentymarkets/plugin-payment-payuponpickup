@@ -196,7 +196,7 @@ class PayUponPickupAssistant extends WizardProvider
                             "form" => [
                                 "paymentMethodIcon" => [
                                     'type' => 'checkbox',
-                                    'defaultValue' => 'false',
+                                    'defaultValue' => false,
                                     'options' => [
                                         'name' => 'assistant.assistantPaymentMethodIconCheckbox'
                                     ]
