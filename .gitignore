@@ -37,3 +37,4 @@ Thumbs.db
 .branchname
 build.properties
 /dist/
+*.iml
