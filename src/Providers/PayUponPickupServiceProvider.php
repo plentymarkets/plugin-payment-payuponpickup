@@ -10,6 +10,8 @@ use PayUponPickup\Methods\PayUponPickupPaymentMethod;
 use Plenty\Modules\Basket\Events\Basket\AfterBasketCreate;
 use Plenty\Modules\Basket\Events\Basket\AfterBasketChanged;
 use Plenty\Plugin\Templates\Twig;
+use Plenty\Modules\Wizard\Contracts\WizardContainerContract;
+use PayUponPickup\Assistants\PayUponPickupAssistant;
 
 /**
  * Class PayUponPickupServiceProvider
@@ -34,6 +36,7 @@ class PayUponPickupServiceProvider extends ServiceProvider
     public function boot(   Twig $twig,
                             PaymentMethodContainer $payContainer)
     {
+        pluginApp(WizardContainerContract::class)->register('payment-payUponPickupAssistant-assistant', PayUponPickupAssistant::class);
         $twig->addExtension(PayUponPickupTwigServiceProvider::class);
 
         //Register the PayUponPickup Plugin

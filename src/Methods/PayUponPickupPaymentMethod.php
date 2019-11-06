@@ -11,6 +11,7 @@ use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Application;
+use Plenty\Plugin\Translation\Translator;
 
 /**
  * Class PayUponPickupPaymentMethod
@@ -65,12 +66,9 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
      */
     public function getName($lang = 'de')
     {
-        $name = $this->settings->getSetting('name', $lang);
-        if(!strlen($name) > 0)
-        {
-            return 'Barzahlung';
-        }
-        return $name;
+        /** @var Translator $translator */
+        $translator = pluginApp(Translator::class);
+        return $translator->trans('PayUponPickup::PaymentMethod.paymentMethodName',[],$lang);
     }
 
     /**
@@ -128,7 +126,9 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
       /** @var FrontendSessionStorageFactoryContract $session */
         $session = pluginApp(FrontendSessionStorageFactoryContract::class);
         $lang = $session->getLocaleSettings()->language;
-        return $this->settings->getSetting('description', $lang);
+        /** @var Translator $translator */
+        $translator = pluginApp(Translator::class);
+        return $translator->trans('PayUponPickup::PaymentMethod.paymentMethodDescription',[],$lang);
     }
 
     /**

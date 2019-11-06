@@ -64,6 +64,34 @@ class SettingsService
     }
 
     /**
+     * Get available clients of the system
+     *
+     * @return array
+     */
+    public function getClientsIds()
+    {
+        /** @var WebstoreRepositoryContract $wsRepo */
+        $wsRepo = pluginApp(WebstoreRepositoryContract::class);
+
+        $clients    = array();
+
+        /** @var Webstore[] $result */
+        $result = $wsRepo->loadAll();
+
+        /** @var Webstore $record */
+        foreach ($result as $record) {
+            if ($record->storeIdentifier > 0) {
+                $settings = $this->clientSettingsExist($record->storeIdentifier);
+                if ($settings) {
+                    $clients[] = $record->storeIdentifier;
+                }
+            }
+        }
+
+        return $clients;
+    }
+
+    /**
      * Get client settings by specific plentyId, indicating the array conversion
      *
      * @param $plentyId
@@ -194,6 +222,18 @@ class SettingsService
         }
 
         return 0;
+    }
+
+    /**
+     * Delete settings for one client
+     *
+     * @param $plentyId
+     */
+    public function deleteSettings($plentyId) {
+        $this->db->query(Settings::MODEL_NAMESPACE)
+            ->where("plentyId",'=',$plentyId)->delete();
+        $this->db->query(ShippingCountrySettings::MODEL_NAMESPACE)
+            ->where('plentyId', '=', $plentyId)->delete();
     }
 
     /**
@@ -343,28 +383,63 @@ class SettingsService
 
         /** @var Query $query */
         $query = $this->db->query(Settings::MODEL_NAMESPACE);
-        $query->where('plentyId', '=', $plentyId);
-        if(!empty($lang))
-        {
-            $query->where('lang', '=', $lang);
-        }
+        $query->where('plentyId', '=', $plentyId)->where('lang', '=', $lang);
         $query->orWhere('lang',   '=', '')->where('plentyId', '=', $plentyId);
 
         /** @var Settings[] $clientSettings */
         $clientSettings = $query->get();
 
-        if( !count($clientSettings) > 0)
+        if(!count($clientSettings))
         {
             $this->updateClients();
             $clientSettings = $query->get();
         }
 
-        if(!count($clientSettings) > 0)
+        if(!count($clientSettings))
         {
             throw new ValidationException('Error loading Settings');
         }
 
         return $clientSettings;
+    }
+
+    /**
+     * Check if settings exist for plentyId and language
+     *
+     * @param $plentyId
+     *
+     * @return boolean
+     */
+    public function clientSettingsExist($plentyId)
+    {
+        /** @var Query $query */
+        $query = $this->db->query(Settings::MODEL_NAMESPACE);
+        $query->where('plentyId', '=', $plentyId);
+        return $query->count();
+    }
+
+    /**
+     * Creates new settings for clients which are not in the DB but available in the system
+     */
+    public function updateClient($plentyId)
+    {
+        /** @var Settings[] $query */
+        $query = $this->db->query(Settings::MODEL_NAMESPACE)
+            ->where('plentyId', '=', $plentyId )->get();
+
+        if( !count($query) > 0 || !$this->areAllLanguagesAvailable($query))
+        {
+            $storedLangs = $this->detectStoredLanguages($query);
+
+            foreach(Settings::AVAILABLE_LANGUAGES as $lang)
+            {
+                if(!in_array($lang, $storedLangs))
+                {
+                    $this->createInitialSettingsForPlentyId($plentyId, $lang);
+                }
+            }
+        }
+
     }
 
     /**
