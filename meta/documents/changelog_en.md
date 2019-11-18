@@ -1,6 +1,6 @@
 # Release Notes for PayUponPickup
 
-## 2.0.0 (2019-10-14)
+## 2.0.0 (2019-11-18)
 
 ### Note 
 - The settings for the pay upon pickup plugin have been transferred to an assistant in the **Setup » Assistants » Payment** menu.

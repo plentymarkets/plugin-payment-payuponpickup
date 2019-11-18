@@ -1,6 +1,6 @@
 # Release Notes für Barzahlung
 
-## 2.0.0 (2019-10-14)
+## 2.0.0 (2019-11-18)
 
 ### Hinweis 
 - Die Einstellungen für das Barzahlungs-Plugin wurden in einen Assistenten überführt und sind nun unter **Einrichtung » Assistenten » Payment** zu finden.
