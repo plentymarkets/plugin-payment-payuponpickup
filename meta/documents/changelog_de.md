@@ -1,5 +1,10 @@
 # Release Notes für Barzahlung
 
+## 2.0.1 (2019-12-05)
+
+### Gefixt
+- Einige Texte wurden angepasst
+
 ## 2.0.0 (2019-11-18)
 
 ### Hinweis 
