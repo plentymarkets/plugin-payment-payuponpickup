@@ -203,4 +203,15 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     {
         return true;
     }
+
+    /**
+     * Get the name for the backend
+     *
+     * @param  string  $lang
+     * @return string
+     */
+    public function getBackendName($lang): string
+    {
+        return $this->getName($lang);
+    }
 }
