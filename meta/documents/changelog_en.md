@@ -1,5 +1,9 @@
 # Release Notes for PayUponPickup
 
+## X.X.X (2019-12-17)
+### Changed
+- Added methods for the backend visibility and backend name
+
 ## 2.0.1 (2019-12-05)
 
 ### Changed

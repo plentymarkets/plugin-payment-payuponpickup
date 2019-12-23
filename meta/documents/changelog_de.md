@@ -1,5 +1,9 @@
 # Release Notes für Barzahlung
 
+## X.X.X (2019-12-17)
+### Geändert
+- Funktionalitäten hinzugefügt für Backend-Sichtbarkeiten und Backend-Name
+
 ## 2.0.1 (2019-12-05)
 
 ### Gefixt

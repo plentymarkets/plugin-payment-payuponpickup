@@ -183,4 +183,35 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
                 return '';
         }
     }
+
+    /**
+     * Check if this payment method should be searchable in the backend
+     *
+     * @return bool
+     */
+    public function isBackendSearchable():bool
+    {
+        return true;
+    }
+
+    /**
+     * Check if this payment method should be active in the backend
+     *
+     * @return bool
+     */
+    public function isBackendActive():bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the name for the backend
+     *
+     * @param  string  $lang
+     * @return string
+     */
+    public function getBackendName($lang): string
+    {
+        return $this->getName($lang);
+    }
 }
