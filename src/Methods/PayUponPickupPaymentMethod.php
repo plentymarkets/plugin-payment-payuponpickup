@@ -214,4 +214,14 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     {
         return $this->getName($lang);
     }
+
+    /**
+     * Check if this payment method can handle subscriptions
+     *
+     * @return bool
+     */
+    public function canHandleSubscriptions():bool
+    {
+        return true;
+    }
 }
