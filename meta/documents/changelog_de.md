@@ -1,5 +1,9 @@
 # Release Notes für Barzahlung
 
+## 2.0.2 (2020-05-27)
+### Geändert
+- Icon für das Backend hinzugefügt
+
 ## 2.0.1 (2020-03-24)
 ### Geändert
 - Funktionalitäten hinzugefügt für Backend-Sichtbarkeiten und Backend-Name
