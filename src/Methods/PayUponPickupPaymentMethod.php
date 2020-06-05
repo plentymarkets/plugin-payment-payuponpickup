@@ -6,9 +6,9 @@ use IO\Services\SessionStorageService;
 use PayUponPickup\Services\SettingsService;
 use Plenty\Modules\Category\Contracts\CategoryRepositoryContract;
 use Plenty\Modules\Frontend\Contracts\Checkout;
-use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
+use Plenty\Modules\Payment\Method\Services\PaymentMethodBaseService;
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Application;
 use Plenty\Plugin\Translation\Translator;
@@ -17,7 +17,7 @@ use Plenty\Plugin\Translation\Translator;
  * Class PayUponPickupPaymentMethod
  * @package PayUponPickup\Methods
  */
-class PayUponPickupPaymentMethod extends PaymentMethodService
+class PayUponPickupPaymentMethod extends PaymentMethodBaseService
 {
     /** @var BasketRepositoryContract */
     private $basketRepo;
@@ -48,7 +48,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     *
     * @return bool
     */
-    public function isActive()
+    public function isActive(): bool
     {
         if(!in_array($this->checkout->getShippingCountryId(), $this->settings->getShippingCountries()))
         {
@@ -64,7 +64,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
      * @param $lang
      * @return string
      */
-    public function getName($lang = 'de')
+    public function getName(string $lang = 'de'): string
     {
         /** @var Translator $translator */
         $translator = pluginApp(Translator::class);
@@ -76,7 +76,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     *
     * @return float
     */
-    public function getFee()
+    public function getFee(): float
     {
 
         return 0.00;
@@ -93,35 +93,32 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
         }
     }
 
+
     /**
-    * Get PayUponPickup Icon
-    *
-    * @return string
-    */
-    public function getIcon( ConfigRepository $config )
+     * Get PayUponPickup Icon
+     *
+     * @param  string  $lang
+     * @return string
+     * @throws \Plenty\Exceptions\ValidationException
+     */
+    public function getIcon(string $lang = 'de'): string
     {
         if( $this->settings->getSetting('logo') == 1)
         {
             return $this->settings->getSetting('logoUrl');
         }
-        elseif($this->settings->getSetting('logo') == 2)
-        {
-            $app = pluginApp(Application::class);
-                $icon = $app->getUrlPath('payuponpickup').'/images/icon.png';
-
-                return $icon;
-        }
-
-        return '';
+        $app = pluginApp(Application::class);
+        $icon = $app->getUrlPath('payuponpickup').'/images/icon.png';
+        return $icon;
     }
 
     /**
     * Get PayUponPickup Description
     *
-    * @param ConfigRepository $config
+    * @param string $lang
     * @return string
     */
-    public function getDescription( ConfigRepository $config )
+    public function getDescription(string $lang = 'de'): string
     {
       /** @var FrontendSessionStorageFactoryContract $session */
         $session = pluginApp(FrontendSessionStorageFactoryContract::class);
@@ -136,7 +133,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
      *
      * @return bool
      */
-    public function isSwitchableTo()
+    public function isSwitchableTo(): bool
     {
         return true;
     }
@@ -146,7 +143,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
      *
      * @return bool
      */
-    public function isSwitchableFrom()
+    public function isSwitchableFrom(): bool
     {
         return true;
     }
@@ -154,9 +151,10 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     /**
      * Get PrepaymentSourceUrl
      *
+     * @param string $lang
      * @return string
      */
-    public function getSourceUrl()
+    public function getSourceUrl(string $lang = 'de'): string
     {
         /** @var FrontendSessionStorageFactoryContract $session */
         $session = pluginApp(FrontendSessionStorageFactoryContract::class);
@@ -210,7 +208,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
      * @param string $lang
      * @return string
      */
-    public function getBackendName(string $lang): string
+    public function getBackendName(string $lang = 'de'): string
     {
         return $this->getName($lang);
     }
@@ -223,5 +221,17 @@ class PayUponPickupPaymentMethod extends PaymentMethodService
     public function canHandleSubscriptions():bool
     {
         return true;
+    }
+
+    /**
+     * Get the url for the backend icon
+     *
+     * @return string
+     */
+    public function getBackendIcon(): string
+    {
+        $app = pluginApp(Application::class);
+        $icon = $app->getUrlPath('payuponpickup').'/images/logos/payuponpickup_backend_icon.svg';
+        return $icon;
     }
 }
