@@ -222,4 +222,16 @@ class PayUponPickupPaymentMethod extends PaymentMethodBaseService
     {
         return true;
     }
+
+    /**
+     * Get the url for the backend icon
+     *
+     * @return string
+     */
+    public function getBackendIcon(): string
+    {
+        $app = pluginApp(Application::class);
+        $icon = $app->getUrlPath('payuponpickup').'/images/logos/payuponpickup_backend_icon.svg';
+        return $icon;
+    }
 }
