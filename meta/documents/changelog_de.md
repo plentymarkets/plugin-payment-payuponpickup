@@ -1,8 +1,11 @@
 # Release Notes für Barzahlung
 
-## 2.0.2 (2020-05-27)
+## 2.0.2 (2020-07-06)
 ### Geändert
 - Icon für das Backend hinzugefügt
+
+### Gefixt
+- Bei mehreren konfigurierten Mandaten, wurde die Einstellungen im Assistenten nicht geladen.
 
 ## 2.0.1 (2020-03-24)
 ### Geändert
