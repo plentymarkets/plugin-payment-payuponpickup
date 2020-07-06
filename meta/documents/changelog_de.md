@@ -5,7 +5,8 @@
 - Icon für das Backend hinzugefügt
 
 ### Gefixt
-- Bei mehreren konfigurierten Mandaten wurde die Einstellungen im Assistenten nicht geladen.
+- Gefixt
+  Im Assistenten des Barzahlungsplugins wurden die Einstellungen nicht korrekt gespeichert, wenn Einstellungen für mehrere Mandanten hinterlegt wurden. Dies wurde nun behoben. 
 
 ## 2.0.1 (2020-03-24)
 ### Geändert
