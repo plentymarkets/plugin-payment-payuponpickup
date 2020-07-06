@@ -5,7 +5,7 @@
 - Icon für das Backend hinzugefügt
 
 ### Gefixt
-- Bei mehreren konfigurierten Mandaten, wurde die Einstellungen im Assistenten nicht geladen.
+- Bei mehreren konfigurierten Mandaten wurde die Einstellungen im Assistenten nicht geladen.
 
 ## 2.0.1 (2020-03-24)
 ### Geändert
