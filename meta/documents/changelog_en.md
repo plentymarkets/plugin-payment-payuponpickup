@@ -1,9 +1,12 @@
 # Release Notes for PayUponPickup
 
-## 2.0.2 (2020-05-27)
+## 2.0.2 (2020-07-06)
 
 ### Changed
 - Added Icon for the backend
+
+### Fixed
+- With several configured clients the settings in the assistent were not loaded.
 
 ## 2.0.1 (2020-03-24)
 
