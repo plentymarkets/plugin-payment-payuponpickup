@@ -5,8 +5,7 @@
 - Icon für das Backend hinzugefügt
 
 ### Gefixt
-- Gefixt
-  Im Assistenten wurden die Einstellungen nicht korrekt angezeigt, wenn Einstellungen für mehrere Mandanten hinterlegt wurden. 
+- Im Assistenten wurden die Einstellungen nicht korrekt angezeigt, wenn Einstellungen für mehrere Mandanten hinterlegt wurden. 
 
 ## 2.0.1 (2020-03-24)
 ### Geändert
