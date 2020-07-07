@@ -6,7 +6,7 @@
 
 ### Gefixt
 - Gefixt
-  Im Assistenten des Barzahlungsplugins wurden die Einstellungen nicht korrekt gespeichert, wenn Einstellungen für mehrere Mandanten hinterlegt wurden. Dies wurde nun behoben. 
+  Im Assistenten wurden die Einstellungen nicht korrekt angezeigt, wenn Einstellungen für mehrere Mandanten hinterlegt wurden. 
 
 ## 2.0.1 (2020-03-24)
 ### Geändert

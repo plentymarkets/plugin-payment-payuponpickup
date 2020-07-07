@@ -6,7 +6,7 @@
 - Added Icon for the backend
 
 ### Fixed
-- Settings were not correctly loaded in the assistant of the Pay upon pickup plugin when settings for several clients were entered. This has been fixed.
+- Settings were not correctly loaded in the assistant when settings for several clients were entered.
 ## 2.0.1 (2020-03-24)
 
 ### Changed
