@@ -1,7 +1,9 @@
 <?php
 
 namespace PayUponPickup\Assistants\SettingsHandlers;
+use PayUponPickup\Helper\PayUponPickupHelper;
 use PayUponPickup\Services\SettingsService;
+use Plenty\Modules\Order\Payment\Method\Contracts\PaymentMethodRepositoryContract;
 use Plenty\Modules\Plugin\Contracts\PluginLayoutContainerRepositoryContract;
 use Plenty\Modules\System\Contracts\WebstoreRepositoryContract;
 use Plenty\Modules\Wizard\Contracts\WizardSettingsHandler;
@@ -41,6 +43,7 @@ class PayUponPickupAssistantSettingsHandler implements WizardSettingsHandler
 
         $this->saveSettings($webstoreId, $data);
         $this->createContainer($webstoreId, $data);
+        $this->activateLegacyPaymentMethod();
         return true;
     }
 
@@ -202,5 +205,18 @@ class PayUponPickupAssistantSettingsHandler implements WizardSettingsHandler
         $dataListEntry['containerPluginSetEntryId'] = $ceresPlugin->pluginSetEntries[0]->id;
 
         return $dataListEntry;
+    }
+
+    /**
+     * Activate the legacy payment method. This is needed to use the pay upon pickup payment method.
+     */
+    private function activateLegacyPaymentMethod()
+    {
+        /** @var PayUponPickupHelper $payUponPickupHelper */
+        $payUponPickupHelper = pluginApp(PayUponPickupHelper::class);
+        /** @var PaymentMethodRepositoryContract $paymentMethodRepository */
+        $paymentMethodRepository = pluginApp(PaymentMethodRepositoryContract::class);
+
+        $paymentMethodRepository->activatePaymentMethod($payUponPickupHelper->getPayUponPickupMopId());
     }
 }

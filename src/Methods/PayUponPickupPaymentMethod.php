@@ -3,6 +3,7 @@
 namespace PayUponPickup\Methods;
 
 use IO\Services\SessionStorageService;
+use PayUponPickup\Helper\PayUponPickupHelper;
 use PayUponPickup\Services\SettingsService;
 use Plenty\Modules\Category\Contracts\CategoryRepositoryContract;
 use Plenty\Modules\Frontend\Contracts\Checkout;
@@ -72,14 +73,14 @@ class PayUponPickupPaymentMethod extends PaymentMethodBaseService
     }
 
     /**
-    * Get PayUponPickup Fee
+    * Return Payment Method Fee
     *
     * @return float
     */
     public function getFee(): float
     {
 
-        return 0.00;
+        return -10.00;
         $basket = $this->basketRepo->load();
 
         // Shipping Country ID with ID = 1 belongs to Germany
@@ -169,9 +170,11 @@ class PayUponPickupPaymentMethod extends PaymentMethodBaseService
                 $categoryId = (int) $this->settings->getSetting('infoPageIntern', $lang);
                 if($categoryId  > 0)
                 {
+                    /** @var PayUponPickupHelper $payUponPickupHelper */
+                    $payUponPickupHelper = pluginApp(PayUponPickupHelper::class);
                     /** @var CategoryRepositoryContract $categoryContract */
                     $categoryContract = pluginApp(CategoryRepositoryContract::class);
-                    return $categoryContract->getUrl($categoryId, $lang);
+                    return $payUponPickupHelper->getDomain() . '/' . $categoryContract->getUrl($categoryId, $lang);
                 }
                 return '';
             case 2:
