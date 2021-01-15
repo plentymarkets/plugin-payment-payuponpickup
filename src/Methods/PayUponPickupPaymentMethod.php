@@ -79,8 +79,6 @@ class PayUponPickupPaymentMethod extends PaymentMethodBaseService
     */
     public function getFee(): float
     {
-
-        return -10.00;
         $basket = $this->basketRepo->load();
 
         // Shipping Country ID with ID = 1 belongs to Germany
