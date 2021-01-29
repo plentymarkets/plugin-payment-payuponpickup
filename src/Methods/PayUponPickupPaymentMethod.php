@@ -159,13 +159,13 @@ class PayUponPickupPaymentMethod extends PaymentMethodBaseService
         $session = pluginApp(FrontendSessionStorageFactoryContract::class);
         $lang = $session->getLocaleSettings()->language;
 
-        $infoPageType = $this->settings->getSetting('infoPageType', $lang);
+        $infoPageType = $this->settings->getSetting('infoPageType');
 
         switch ($infoPageType)
         {
             case 1:
                 // internal
-                $categoryId = (int) $this->settings->getSetting('infoPageIntern', $lang);
+                $categoryId = (int) $this->settings->getSetting('infoPageIntern');
                 if($categoryId  > 0)
                 {
                     /** @var PayUponPickupHelper $payUponPickupHelper */
@@ -185,7 +185,7 @@ class PayUponPickupPaymentMethod extends PaymentMethodBaseService
                 return '';
             case 2:
                 // external
-                return $this->settings->getSetting('infoPageExtern', $lang);
+                return $this->settings->getSetting('infoPageExtern');
             default:
                 return '';
         }
