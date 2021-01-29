@@ -2,17 +2,15 @@
 
 namespace PayUponPickup\Methods;
 
-use IO\Services\SessionStorageService;
 use PayUponPickup\Helper\PayUponPickupHelper;
 use PayUponPickup\Services\SettingsService;
-use Plenty\Modules\Category\Contracts\CategoryRepositoryContract;
 use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Plenty\Modules\Payment\Method\Services\PaymentMethodBaseService;
-use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Application;
 use Plenty\Plugin\Translation\Translator;
+use Plenty\Modules\Webshop\Contracts\UrlBuilderRepositoryContract;
 
 /**
  * Class PayUponPickupPaymentMethod
@@ -172,9 +170,17 @@ class PayUponPickupPaymentMethod extends PaymentMethodBaseService
                 {
                     /** @var PayUponPickupHelper $payUponPickupHelper */
                     $payUponPickupHelper = pluginApp(PayUponPickupHelper::class);
-                    /** @var CategoryRepositoryContract $categoryContract */
-                    $categoryContract = pluginApp(CategoryRepositoryContract::class);
-                    return $payUponPickupHelper->getDomain() . '/' . $categoryContract->getUrl($categoryId, $lang);
+                    $urlBuilderRepository = pluginApp(UrlBuilderRepositoryContract::class);
+
+                    $urlQuery = $urlBuilderRepository->buildCategoryUrl($categoryId, $lang);
+
+                    $defaultLanguage = $payUponPickupHelper->getWebstoreConfig()->defaultLanguage;
+                    $includeLanguage = false;
+                    if ($lang != $defaultLanguage) {
+                        $includeLanguage = true;
+                    }
+
+                    return $payUponPickupHelper->getDomain() . $urlQuery->toRelativeUrl($includeLanguage);
                 }
                 return '';
             case 2:

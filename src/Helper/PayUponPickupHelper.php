@@ -3,9 +3,15 @@
 namespace PayUponPickup\Helper;
 
 use Plenty\Modules\Helper\Services\WebstoreHelper;
+use Plenty\Modules\System\Models\WebstoreConfiguration;
 
 class PayUponPickupHelper
 {
+    /**
+     * @var WebstoreConfiguration
+     */
+    private $webstoreConfig;
+    
     /**
      * Load the ID of the payment method
      * Return the ID for the payment method
@@ -25,11 +31,7 @@ class PayUponPickupHelper
      */
     public function getDomain()
     {
-        /** @var WebstoreHelper $webstoreHelper */
-        $webstoreHelper = pluginApp(WebstoreHelper::class);
-
-        /** @var \Plenty\Modules\System\Models\WebstoreConfiguration $webstoreConfig */
-        $webstoreConfig = $webstoreHelper->getCurrentWebstoreConfiguration();
+        $webstoreConfig = $this->getWebstoreConfig();
 
         $domain = $webstoreConfig->domainSsl;
         if (strpos($domain, 'master.plentymarkets') || $domain == 'http://dbmaster.plenty-showcase.de' || $domain == 'http://dbmaster-beta7.plentymarkets.eu' || $domain == 'http://dbmaster-stable7.plentymarkets.eu') {
@@ -37,5 +39,20 @@ class PayUponPickupHelper
         }
 
         return $domain;
+    }
+
+    /**
+     * @return WebstoreConfiguration
+     */
+    public function getWebstoreConfig()
+    {
+        if ($this->webstoreConfig === null) {
+            /** @var WebstoreHelper $webstoreHelper */
+            $webstoreHelper = pluginApp(WebstoreHelper::class);
+            /** @var WebstoreConfiguration $webstoreConfig */
+            $this->webstoreConfig = $webstoreHelper->getCurrentWebstoreConfiguration();
+        }
+
+        return $this->webstoreConfig;
     }
 }
