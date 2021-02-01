@@ -1,5 +1,10 @@
 # Release Notes for PayUponPickup
 
+## 2.0.4
+
+### Fixed
+- The URL for the internal info page is now generated correctly.
+
 ## 2.0.3
 
 ### Fixed

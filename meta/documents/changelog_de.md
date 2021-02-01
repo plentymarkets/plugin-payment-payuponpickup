@@ -1,5 +1,10 @@
 # Release Notes für Barzahlung
 
+## 2.0.4
+
+### Behoben
+- Die URL der internen Infoseite wird nun für Fremdsprachen korrekt erzeugt.
+
 ## 2.0.3
 
 ### Behoben
